@@ -407,9 +407,9 @@
             // 
             this.buttonLamMoiQuyDinh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonLamMoiQuyDinh.Location = new System.Drawing.Point(4, 74);
-            this.buttonLamMoiQuyDinh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonLamMoiQuyDinh.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLamMoiQuyDinh.Name = "buttonLamMoiQuyDinh";
-            this.buttonLamMoiQuyDinh.Size = new System.Drawing.Size(88, 26);
+            this.buttonLamMoiQuyDinh.Size = new System.Drawing.Size(98, 26);
             this.buttonLamMoiQuyDinh.TabIndex = 9;
             this.buttonLamMoiQuyDinh.Text = "Làm Mới";
             this.buttonLamMoiQuyDinh.UseVisualStyleBackColor = true;
@@ -418,11 +418,11 @@
             // labelQuyDinhHienHanh
             // 
             this.labelQuyDinhHienHanh.AutoSize = true;
-            this.labelQuyDinhHienHanh.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelQuyDinhHienHanh.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.labelQuyDinhHienHanh.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelQuyDinhHienHanh.ForeColor = System.Drawing.SystemColors.ControlText;
             this.labelQuyDinhHienHanh.Location = new System.Drawing.Point(166, 38);
             this.labelQuyDinhHienHanh.Name = "labelQuyDinhHienHanh";
-            this.labelQuyDinhHienHanh.Size = new System.Drawing.Size(303, 33);
+            this.labelQuyDinhHienHanh.Size = new System.Drawing.Size(285, 29);
             this.labelQuyDinhHienHanh.TabIndex = 1;
             this.labelQuyDinhHienHanh.Text = "QUY ĐỊNH HIỆN HÀNH";
             // 
@@ -452,12 +452,12 @@
             // lblCapNhatQuyDinh
             // 
             this.lblCapNhatQuyDinh.BackColor = System.Drawing.Color.Transparent;
-            this.lblCapNhatQuyDinh.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblCapNhatQuyDinh.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblCapNhatQuyDinh.Location = new System.Drawing.Point(185, 39);
+            this.lblCapNhatQuyDinh.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblCapNhatQuyDinh.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblCapNhatQuyDinh.Location = new System.Drawing.Point(141, 39);
             this.lblCapNhatQuyDinh.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCapNhatQuyDinh.Name = "lblCapNhatQuyDinh";
-            this.lblCapNhatQuyDinh.Size = new System.Drawing.Size(255, 31);
+            this.lblCapNhatQuyDinh.Size = new System.Drawing.Size(299, 31);
             this.lblCapNhatQuyDinh.TabIndex = 11;
             this.lblCapNhatQuyDinh.Text = "CẬP NHẬT QUY ĐỊNH\r\n";
             // 
@@ -715,7 +715,7 @@
             // 
             this.textBoxTongDoanhThu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTongDoanhThu.Location = new System.Drawing.Point(430, 9);
-            this.textBoxTongDoanhThu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxTongDoanhThu.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxTongDoanhThu.Name = "textBoxTongDoanhThu";
             this.textBoxTongDoanhThu.ReadOnly = true;
             this.textBoxTongDoanhThu.Size = new System.Drawing.Size(215, 30);
@@ -750,7 +750,7 @@
             // 
             this.textBoxNamBaoCao.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNamBaoCao.Location = new System.Drawing.Point(528, 5);
-            this.textBoxNamBaoCao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNamBaoCao.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNamBaoCao.Name = "textBoxNamBaoCao";
             this.textBoxNamBaoCao.Size = new System.Drawing.Size(173, 30);
             this.textBoxNamBaoCao.TabIndex = 10;
@@ -760,7 +760,7 @@
             // 
             this.textBoxThangBaoCao.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxThangBaoCao.Location = new System.Drawing.Point(263, 5);
-            this.textBoxThangBaoCao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxThangBaoCao.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxThangBaoCao.Name = "textBoxThangBaoCao";
             this.textBoxThangBaoCao.Size = new System.Drawing.Size(173, 30);
             this.textBoxThangBaoCao.TabIndex = 9;
@@ -991,7 +991,7 @@
             // 
             this.buttonLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonLamMoi.Location = new System.Drawing.Point(4, 53);
-            this.buttonLamMoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonLamMoi.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLamMoi.Name = "buttonLamMoi";
             this.buttonLamMoi.Size = new System.Drawing.Size(91, 32);
             this.buttonLamMoi.TabIndex = 8;
@@ -1053,7 +1053,7 @@
             // 
             this.buttonClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonClear.Location = new System.Drawing.Point(392, 347);
-            this.buttonClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonClear.Margin = new System.Windows.Forms.Padding(4);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(91, 35);
             this.buttonClear.TabIndex = 7;
@@ -1065,7 +1065,7 @@
             // 
             this.buttonThemXe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonThemXe.Location = new System.Drawing.Point(226, 347);
-            this.buttonThemXe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonThemXe.Margin = new System.Windows.Forms.Padding(4);
             this.buttonThemXe.Name = "buttonThemXe";
             this.buttonThemXe.Size = new System.Drawing.Size(112, 35);
             this.buttonThemXe.TabIndex = 6;
@@ -1604,7 +1604,7 @@
             this.comboBoxBienSoXe1.DisplayMember = "BienSo";
             this.comboBoxBienSoXe1.FormattingEnabled = true;
             this.comboBoxBienSoXe1.Location = new System.Drawing.Point(179, 8);
-            this.comboBoxBienSoXe1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxBienSoXe1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxBienSoXe1.Name = "comboBoxBienSoXe1";
             this.comboBoxBienSoXe1.Size = new System.Drawing.Size(169, 30);
             this.comboBoxBienSoXe1.TabIndex = 1;
@@ -1770,7 +1770,7 @@
             this.comboBienSoXe2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBienSoXe2.FormattingEnabled = true;
             this.comboBienSoXe2.Location = new System.Drawing.Point(115, 20);
-            this.comboBienSoXe2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBienSoXe2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBienSoXe2.Name = "comboBienSoXe2";
             this.comboBienSoXe2.Size = new System.Drawing.Size(383, 30);
             this.comboBienSoXe2.TabIndex = 1;
@@ -1951,7 +1951,7 @@
             this.panel28.Controls.Add(this.panel30);
             this.panel28.Controls.Add(this.panel29);
             this.panel28.Location = new System.Drawing.Point(1, 49);
-            this.panel28.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel28.Margin = new System.Windows.Forms.Padding(4);
             this.panel28.Name = "panel28";
             this.panel28.Size = new System.Drawing.Size(1124, 214);
             this.panel28.TabIndex = 2;
@@ -1961,7 +1961,7 @@
             this.panel32.Controls.Add(this.labelGiaVTPT);
             this.panel32.Controls.Add(this.textBoxGiaVTPT);
             this.panel32.Location = new System.Drawing.Point(557, 100);
-            this.panel32.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel32.Margin = new System.Windows.Forms.Padding(4);
             this.panel32.Name = "panel32";
             this.panel32.Size = new System.Drawing.Size(567, 92);
             this.panel32.TabIndex = 3;
@@ -1981,7 +1981,7 @@
             // 
             this.textBoxGiaVTPT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxGiaVTPT.Location = new System.Drawing.Point(237, 30);
-            this.textBoxGiaVTPT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxGiaVTPT.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxGiaVTPT.Name = "textBoxGiaVTPT";
             this.textBoxGiaVTPT.Size = new System.Drawing.Size(285, 30);
             this.textBoxGiaVTPT.TabIndex = 4;
@@ -1992,7 +1992,7 @@
             this.panel31.Controls.Add(this.labelTenVTPTMoi);
             this.panel31.Controls.Add(this.textBoxTenVTPTMoi);
             this.panel31.Location = new System.Drawing.Point(557, 0);
-            this.panel31.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel31.Margin = new System.Windows.Forms.Padding(4);
             this.panel31.Name = "panel31";
             this.panel31.Size = new System.Drawing.Size(567, 94);
             this.panel31.TabIndex = 2;
@@ -2012,7 +2012,7 @@
             // 
             this.textBoxTenVTPTMoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTenVTPTMoi.Location = new System.Drawing.Point(237, 29);
-            this.textBoxTenVTPTMoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxTenVTPTMoi.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxTenVTPTMoi.MaxLength = 30;
             this.textBoxTenVTPTMoi.Name = "textBoxTenVTPTMoi";
             this.textBoxTenVTPTMoi.Size = new System.Drawing.Size(285, 30);
@@ -2024,7 +2024,7 @@
             this.panel30.Controls.Add(this.labelSoLuongVTPT);
             this.panel30.Controls.Add(this.textBoxSoLuongVTPT);
             this.panel30.Location = new System.Drawing.Point(0, 100);
-            this.panel30.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel30.Margin = new System.Windows.Forms.Padding(4);
             this.panel30.Name = "panel30";
             this.panel30.Size = new System.Drawing.Size(549, 92);
             this.panel30.TabIndex = 1;
@@ -2044,7 +2044,7 @@
             // 
             this.textBoxSoLuongVTPT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSoLuongVTPT.Location = new System.Drawing.Point(195, 30);
-            this.textBoxSoLuongVTPT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSoLuongVTPT.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSoLuongVTPT.Name = "textBoxSoLuongVTPT";
             this.textBoxSoLuongVTPT.Size = new System.Drawing.Size(348, 30);
             this.textBoxSoLuongVTPT.TabIndex = 2;
@@ -2054,7 +2054,7 @@
             this.panel29.Controls.Add(this.comboBoxTenVTPT);
             this.panel29.Controls.Add(this.labelTenVTPT);
             this.panel29.Location = new System.Drawing.Point(0, 1);
-            this.panel29.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel29.Margin = new System.Windows.Forms.Padding(4);
             this.panel29.Name = "panel29";
             this.panel29.Size = new System.Drawing.Size(549, 92);
             this.panel29.TabIndex = 0;
@@ -2066,7 +2066,7 @@
             this.comboBoxTenVTPT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTenVTPT.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.comboBoxTenVTPT.Location = new System.Drawing.Point(195, 26);
-            this.comboBoxTenVTPT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxTenVTPT.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxTenVTPT.Name = "comboBoxTenVTPT";
             this.comboBoxTenVTPT.Size = new System.Drawing.Size(348, 30);
             this.comboBoxTenVTPT.TabIndex = 1;
@@ -2101,7 +2101,7 @@
             this.buttonTaoMoiVTPT.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonTaoMoiVTPT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTaoMoiVTPT.Location = new System.Drawing.Point(281, 56);
-            this.buttonTaoMoiVTPT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonTaoMoiVTPT.Margin = new System.Windows.Forms.Padding(4);
             this.buttonTaoMoiVTPT.Name = "buttonTaoMoiVTPT";
             this.buttonTaoMoiVTPT.Size = new System.Drawing.Size(231, 49);
             this.buttonTaoMoiVTPT.TabIndex = 6;
