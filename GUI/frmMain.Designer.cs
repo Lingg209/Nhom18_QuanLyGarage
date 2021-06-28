@@ -179,12 +179,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.MaPhuTung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenVatTuPhuTung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maPhuTungDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenVatTuPhuTungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soLuongDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donGiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel28 = new System.Windows.Forms.Panel();
             this.panel32 = new System.Windows.Forms.Panel();
             this.labelGiaVTPT = new System.Windows.Forms.Label();
@@ -280,6 +274,8 @@
             this.pHIEUNHAPVTPTTableAdapter = new GUI.QuanLyGarageDataSetTableAdapters.PHIEUNHAPVTPTTableAdapter();
             this.pHIEUSUACHUATableAdapter = new GUI.QuanLyGarageDataSetTableAdapters.PHIEUSUACHUATableAdapter();
             this.pHIEUTHUTIENTableAdapter = new GUI.QuanLyGarageDataSetTableAdapters.PHIEUTHUTIENTableAdapter();
+            this.MaPhuTung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenVatTuPhuTung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStripCongCu.SuspendLayout();
             this.tPQuyDinh.SuspendLayout();
             this.panelQuyDinhHienHanh.SuspendLayout();
@@ -482,7 +478,7 @@
             this.dataGridViewQuyDinhHienHanh.Name = "dataGridViewQuyDinhHienHanh";
             this.dataGridViewQuyDinhHienHanh.RowHeadersWidth = 51;
             this.dataGridViewQuyDinhHienHanh.RowTemplate.Height = 24;
-            this.dataGridViewQuyDinhHienHanh.Size = new System.Drawing.Size(564, 330);
+            this.dataGridViewQuyDinhHienHanh.Size = new System.Drawing.Size(564, 343);
             this.dataGridViewQuyDinhHienHanh.TabIndex = 0;
             // 
             // pnCapNhatQuyDinh
@@ -1313,6 +1309,7 @@
             this.txtBoxTenKH.Name = "txtBoxTenKH";
             this.txtBoxTenKH.Size = new System.Drawing.Size(302, 30);
             this.txtBoxTenKH.TabIndex = 1;
+            this.txtBoxTenKH.TextChanged += new System.EventHandler(this.txtBoxTenKH_TextChanged);
             // 
             // tPPSC
             // 
@@ -2030,66 +2027,15 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaPhuTung,
-            this.TenVatTuPhuTung,
-            this.maPhuTungDataGridViewTextBoxColumn1,
-            this.tenVatTuPhuTungDataGridViewTextBoxColumn,
-            this.soLuongDataGridViewTextBoxColumn1,
-            this.donGiaDataGridViewTextBoxColumn});
+            this.TenVatTuPhuTung});
             this.dataGridView1.DataSource = this.kHOBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(66, 4);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(323, 382);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // MaPhuTung
-            // 
-            this.MaPhuTung.DataPropertyName = "MaPhuTung";
-            this.MaPhuTung.HeaderText = "Mã VTPT";
-            this.MaPhuTung.MinimumWidth = 6;
-            this.MaPhuTung.Name = "MaPhuTung";
-            this.MaPhuTung.Width = 125;
-            // 
-            // TenVatTuPhuTung
-            // 
-            this.TenVatTuPhuTung.DataPropertyName = "TenVatTuPhuTung";
-            this.TenVatTuPhuTung.HeaderText = "Tên VTPT";
-            this.TenVatTuPhuTung.MinimumWidth = 6;
-            this.TenVatTuPhuTung.Name = "TenVatTuPhuTung";
-            this.TenVatTuPhuTung.Width = 125;
-            // 
-            // maPhuTungDataGridViewTextBoxColumn1
-            // 
-            this.maPhuTungDataGridViewTextBoxColumn1.DataPropertyName = "MaPhuTung";
-            this.maPhuTungDataGridViewTextBoxColumn1.HeaderText = "MaPhuTung";
-            this.maPhuTungDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.maPhuTungDataGridViewTextBoxColumn1.Name = "maPhuTungDataGridViewTextBoxColumn1";
-            this.maPhuTungDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // tenVatTuPhuTungDataGridViewTextBoxColumn
-            // 
-            this.tenVatTuPhuTungDataGridViewTextBoxColumn.DataPropertyName = "TenVatTuPhuTung";
-            this.tenVatTuPhuTungDataGridViewTextBoxColumn.HeaderText = "TenVatTuPhuTung";
-            this.tenVatTuPhuTungDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenVatTuPhuTungDataGridViewTextBoxColumn.Name = "tenVatTuPhuTungDataGridViewTextBoxColumn";
-            this.tenVatTuPhuTungDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // soLuongDataGridViewTextBoxColumn1
-            // 
-            this.soLuongDataGridViewTextBoxColumn1.DataPropertyName = "SoLuong";
-            this.soLuongDataGridViewTextBoxColumn1.HeaderText = "SoLuong";
-            this.soLuongDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.soLuongDataGridViewTextBoxColumn1.Name = "soLuongDataGridViewTextBoxColumn1";
-            this.soLuongDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // donGiaDataGridViewTextBoxColumn
-            // 
-            this.donGiaDataGridViewTextBoxColumn.DataPropertyName = "DonGia";
-            this.donGiaDataGridViewTextBoxColumn.HeaderText = "DonGia";
-            this.donGiaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.donGiaDataGridViewTextBoxColumn.Name = "donGiaDataGridViewTextBoxColumn";
-            this.donGiaDataGridViewTextBoxColumn.Width = 125;
             // 
             // panel28
             // 
@@ -2552,6 +2498,7 @@
             this.dataGridViewTraCuu.ColumnHeadersHeight = 29;
             this.dataGridViewTraCuu.Location = new System.Drawing.Point(4, 4);
             this.dataGridViewTraCuu.Name = "dataGridViewTraCuu";
+            this.dataGridViewTraCuu.ReadOnly = true;
             this.dataGridViewTraCuu.RowHeadersWidth = 51;
             this.dataGridViewTraCuu.RowTemplate.Height = 24;
             this.dataGridViewTraCuu.Size = new System.Drawing.Size(747, 424);
@@ -2675,6 +2622,7 @@
             this.dataGridViewPnVT.DataSource = this.pHIEUNHAPVTPTBindingSource;
             this.dataGridViewPnVT.Location = new System.Drawing.Point(3, 55);
             this.dataGridViewPnVT.Name = "dataGridViewPnVT";
+            this.dataGridViewPnVT.ReadOnly = true;
             this.dataGridViewPnVT.RowHeadersWidth = 51;
             this.dataGridViewPnVT.RowTemplate.Height = 24;
             this.dataGridViewPnVT.Size = new System.Drawing.Size(543, 365);
@@ -2687,6 +2635,7 @@
             this.maPNVTPTDataGridViewTextBoxColumn.HeaderText = "Mã Phiếu";
             this.maPNVTPTDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maPNVTPTDataGridViewTextBoxColumn.Name = "maPNVTPTDataGridViewTextBoxColumn";
+            this.maPNVTPTDataGridViewTextBoxColumn.ReadOnly = true;
             this.maPNVTPTDataGridViewTextBoxColumn.Width = 125;
             // 
             // maPhuTungDataGridViewTextBoxColumn
@@ -2695,6 +2644,7 @@
             this.maPhuTungDataGridViewTextBoxColumn.HeaderText = "Mã VTPT";
             this.maPhuTungDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maPhuTungDataGridViewTextBoxColumn.Name = "maPhuTungDataGridViewTextBoxColumn";
+            this.maPhuTungDataGridViewTextBoxColumn.ReadOnly = true;
             this.maPhuTungDataGridViewTextBoxColumn.Width = 125;
             // 
             // soLuongDataGridViewTextBoxColumn
@@ -2703,6 +2653,7 @@
             this.soLuongDataGridViewTextBoxColumn.HeaderText = "Số Lượng";
             this.soLuongDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.soLuongDataGridViewTextBoxColumn.Name = "soLuongDataGridViewTextBoxColumn";
+            this.soLuongDataGridViewTextBoxColumn.ReadOnly = true;
             this.soLuongDataGridViewTextBoxColumn.Width = 125;
             // 
             // thoiDiemDataGridViewTextBoxColumn
@@ -2711,6 +2662,7 @@
             this.thoiDiemDataGridViewTextBoxColumn.HeaderText = "Thời điểm";
             this.thoiDiemDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.thoiDiemDataGridViewTextBoxColumn.Name = "thoiDiemDataGridViewTextBoxColumn";
+            this.thoiDiemDataGridViewTextBoxColumn.ReadOnly = true;
             this.thoiDiemDataGridViewTextBoxColumn.Width = 125;
             // 
             // pHIEUNHAPVTPTBindingSource
@@ -2730,6 +2682,7 @@
             this.dataGridViewKho.DataSource = this.kHOBindingSource;
             this.dataGridViewKho.Location = new System.Drawing.Point(552, 55);
             this.dataGridViewKho.Name = "dataGridViewKho";
+            this.dataGridViewKho.ReadOnly = true;
             this.dataGridViewKho.RowHeadersWidth = 51;
             this.dataGridViewKho.RowTemplate.Height = 24;
             this.dataGridViewKho.Size = new System.Drawing.Size(574, 365);
@@ -2741,6 +2694,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "Mã VTPT";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 125;
             // 
             // dataGridViewTextBoxColumn2
@@ -2749,6 +2703,7 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Tên VTPT";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 125;
             // 
             // dataGridViewTextBoxColumn3
@@ -2757,6 +2712,7 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Số Lượng";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 125;
             // 
             // dataGridViewTextBoxColumn4
@@ -2765,6 +2721,7 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Đơn giá";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 125;
             // 
             // tabPage3
@@ -2824,6 +2781,7 @@
             this.dataGridViewPSC.DataSource = this.pHIEUSUACHUABindingSource;
             this.dataGridViewPSC.Location = new System.Drawing.Point(4, 4);
             this.dataGridViewPSC.Name = "dataGridViewPSC";
+            this.dataGridViewPSC.ReadOnly = true;
             this.dataGridViewPSC.RowHeadersWidth = 51;
             this.dataGridViewPSC.RowTemplate.Height = 24;
             this.dataGridViewPSC.Size = new System.Drawing.Size(815, 356);
@@ -2835,6 +2793,7 @@
             this.maPhieuSuaChuaDataGridViewTextBoxColumn.HeaderText = "Mã phiếu";
             this.maPhieuSuaChuaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maPhieuSuaChuaDataGridViewTextBoxColumn.Name = "maPhieuSuaChuaDataGridViewTextBoxColumn";
+            this.maPhieuSuaChuaDataGridViewTextBoxColumn.ReadOnly = true;
             this.maPhieuSuaChuaDataGridViewTextBoxColumn.Width = 125;
             // 
             // bienSoDataGridViewTextBoxColumn
@@ -2843,6 +2802,7 @@
             this.bienSoDataGridViewTextBoxColumn.HeaderText = "Biển số xe";
             this.bienSoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.bienSoDataGridViewTextBoxColumn.Name = "bienSoDataGridViewTextBoxColumn";
+            this.bienSoDataGridViewTextBoxColumn.ReadOnly = true;
             this.bienSoDataGridViewTextBoxColumn.Width = 125;
             // 
             // maKHDataGridViewTextBoxColumn
@@ -2851,6 +2811,7 @@
             this.maKHDataGridViewTextBoxColumn.HeaderText = "Mã Khách hàng";
             this.maKHDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maKHDataGridViewTextBoxColumn.Name = "maKHDataGridViewTextBoxColumn";
+            this.maKHDataGridViewTextBoxColumn.ReadOnly = true;
             this.maKHDataGridViewTextBoxColumn.Width = 125;
             // 
             // tienCongDataGridViewTextBoxColumn
@@ -2859,6 +2820,7 @@
             this.tienCongDataGridViewTextBoxColumn.HeaderText = "Tiền công";
             this.tienCongDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tienCongDataGridViewTextBoxColumn.Name = "tienCongDataGridViewTextBoxColumn";
+            this.tienCongDataGridViewTextBoxColumn.ReadOnly = true;
             this.tienCongDataGridViewTextBoxColumn.Width = 125;
             // 
             // tienPhuTungDataGridViewTextBoxColumn
@@ -2867,6 +2829,7 @@
             this.tienPhuTungDataGridViewTextBoxColumn.HeaderText = "Tiền phụ tùng";
             this.tienPhuTungDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tienPhuTungDataGridViewTextBoxColumn.Name = "tienPhuTungDataGridViewTextBoxColumn";
+            this.tienPhuTungDataGridViewTextBoxColumn.ReadOnly = true;
             this.tienPhuTungDataGridViewTextBoxColumn.Width = 125;
             // 
             // tongTienDataGridViewTextBoxColumn
@@ -2875,6 +2838,7 @@
             this.tongTienDataGridViewTextBoxColumn.HeaderText = "Tổng tiền";
             this.tongTienDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tongTienDataGridViewTextBoxColumn.Name = "tongTienDataGridViewTextBoxColumn";
+            this.tongTienDataGridViewTextBoxColumn.ReadOnly = true;
             this.tongTienDataGridViewTextBoxColumn.Width = 125;
             // 
             // pHIEUSUACHUABindingSource
@@ -2928,6 +2892,7 @@
             this.dataGridViewPTT.DataSource = this.pHIEUTHUTIENBindingSource;
             this.dataGridViewPTT.Location = new System.Drawing.Point(9, 4);
             this.dataGridViewPTT.Name = "dataGridViewPTT";
+            this.dataGridViewPTT.ReadOnly = true;
             this.dataGridViewPTT.RowHeadersWidth = 51;
             this.dataGridViewPTT.RowTemplate.Height = 24;
             this.dataGridViewPTT.Size = new System.Drawing.Size(556, 348);
@@ -2939,6 +2904,7 @@
             this.maPhieuThuTienDataGridViewTextBoxColumn.HeaderText = "MaPhieuThuTien";
             this.maPhieuThuTienDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maPhieuThuTienDataGridViewTextBoxColumn.Name = "maPhieuThuTienDataGridViewTextBoxColumn";
+            this.maPhieuThuTienDataGridViewTextBoxColumn.ReadOnly = true;
             this.maPhieuThuTienDataGridViewTextBoxColumn.Width = 125;
             // 
             // maKHDataGridViewTextBoxColumn1
@@ -2947,6 +2913,7 @@
             this.maKHDataGridViewTextBoxColumn1.HeaderText = "MaKH";
             this.maKHDataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.maKHDataGridViewTextBoxColumn1.Name = "maKHDataGridViewTextBoxColumn1";
+            this.maKHDataGridViewTextBoxColumn1.ReadOnly = true;
             this.maKHDataGridViewTextBoxColumn1.Width = 125;
             // 
             // tienThuDataGridViewTextBoxColumn
@@ -2955,6 +2922,7 @@
             this.tienThuDataGridViewTextBoxColumn.HeaderText = "TienThu";
             this.tienThuDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tienThuDataGridViewTextBoxColumn.Name = "tienThuDataGridViewTextBoxColumn";
+            this.tienThuDataGridViewTextBoxColumn.ReadOnly = true;
             this.tienThuDataGridViewTextBoxColumn.Width = 125;
             // 
             // ngayThuTienDataGridViewTextBoxColumn
@@ -2963,6 +2931,7 @@
             this.ngayThuTienDataGridViewTextBoxColumn.HeaderText = "NgayThuTien";
             this.ngayThuTienDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.ngayThuTienDataGridViewTextBoxColumn.Name = "ngayThuTienDataGridViewTextBoxColumn";
+            this.ngayThuTienDataGridViewTextBoxColumn.ReadOnly = true;
             this.ngayThuTienDataGridViewTextBoxColumn.Width = 125;
             // 
             // pHIEUTHUTIENBindingSource
@@ -3017,6 +2986,24 @@
             // pHIEUTHUTIENTableAdapter
             // 
             this.pHIEUTHUTIENTableAdapter.ClearBeforeFill = true;
+            // 
+            // MaPhuTung
+            // 
+            this.MaPhuTung.DataPropertyName = "MaPhuTung";
+            this.MaPhuTung.HeaderText = "Mã VTPT";
+            this.MaPhuTung.MinimumWidth = 6;
+            this.MaPhuTung.Name = "MaPhuTung";
+            this.MaPhuTung.ReadOnly = true;
+            this.MaPhuTung.Width = 125;
+            // 
+            // TenVatTuPhuTung
+            // 
+            this.TenVatTuPhuTung.DataPropertyName = "TenVatTuPhuTung";
+            this.TenVatTuPhuTung.HeaderText = "Tên VTPT";
+            this.TenVatTuPhuTung.MinimumWidth = 6;
+            this.TenVatTuPhuTung.Name = "TenVatTuPhuTung";
+            this.TenVatTuPhuTung.ReadOnly = true;
+            this.TenVatTuPhuTung.Width = 125;
             // 
             // frmMain
             // 
@@ -3418,8 +3405,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.DataGridView dataGridViewPTT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhuTung;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenVatTuPhuTung;
         private QuanLyGarageDataSet quanLyGarageDataSet1;
         private System.Windows.Forms.BindingSource pHIEUTHUTIENBindingSource;
         private QuanLyGarageDataSetTableAdapters.PHIEUTHUTIENTableAdapter pHIEUTHUTIENTableAdapter;
@@ -3429,9 +3414,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayThuTienDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnPSC;
         private System.Windows.Forms.Button btnPTT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maPhuTungDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenVatTuPhuTungDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soLuongDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn donGiaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhuTung;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenVatTuPhuTung;
     }
 }

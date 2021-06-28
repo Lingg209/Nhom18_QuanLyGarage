@@ -308,52 +308,50 @@ namespace GUI
 
         private void buttonThemXe_Click(object sender, EventArgs e)
         {
-            if (txtBoxTenKH.Text.Length == 0)
-                MessageBox.Show("Vui lòng nhập tên khách hàng!");
+            if (txtBoxDienThoai.Text.Length == 0)
+                MessageBox.Show("Vui lòng nhập điện thoại của khách hàng!");
             else
             {
-                if (txtBoxDienThoai.Text.Length == 0)
-                    MessageBox.Show("Vui lòng nhập điện thoại của khách hàng!");
+                if (txtBoxDiaChi.Text.Length == 0)
+                    MessageBox.Show("Vui lòng nhập địa chỉ khách hàng!");
                 else
                 {
-                    if (txtBoxDiaChi.Text.Length == 0)
-                        MessageBox.Show("Vui lòng nhập địa chỉ khách hàng!");
+                    if (txtBoxBienSo.Text.Length == 0)
+                        MessageBox.Show("Vui lòng nhập biển số xe !");
                     else
                     {
-                        if (txtBoxBienSo.Text.Length == 0)
-                            MessageBox.Show("Vui lòng nhập biển số xe !");
+                        int test = 0;
+                        test = KhachHangBUS.Instance.ThemKhachHang(txtBoxTenKH.Text, txtBoxDienThoai.Text, txtBoxDiaChi.Text);      //thuc hien them khach hang moi
+                        test = XeBUS.Instance.ThemXe(txtBoxBienSo.Text, comBoxHieuXe.SelectedValue.ToString(), KhachHangBUS.Instance.LayMaKH(txtBoxTenKH.Text, txtBoxDienThoai.Text), now);
+                        if (test != 0)
+                        {
+                            MessageBox.Show("Thêm xe thành công!");
+                            progressBarSoXeDaThem.Value = progressBarSoXeDaThem.Value + 1;
+                            this.xETableAdapter.Fill(this.quanLyGarageDataSet.XE);
+                        }
+                        if (progressBarSoXeDaThem.Value == progressBarSoXeDaThem.Maximum)
+                        {
+                            txtBoxTenKH.Clear();
+                            txtBoxDienThoai.Clear();
+                            txtBoxDiaChi.Clear();
+                            txtBoxBienSo.Clear();
+                            txtBoxTenKH.Visible = false;
+                            txtBoxDienThoai.Visible = false;
+                            txtBoxDiaChi.Visible = false;
+                            txtBoxBienSo.Visible = false;
+                            buttonThemXe.Enabled = false;
+                            buttonClear.Enabled = false;
+                        }
+                        else
+                        {
+                            txtBoxTenKH.Clear();
+                            txtBoxDienThoai.Clear();
+                            txtBoxDiaChi.Clear();
+                            txtBoxBienSo.Clear();
+                        }
                     }
                 }
-            }
-            int test = 0;
-            test = KhachHangBUS.Instance.ThemKhachHang(txtBoxTenKH.Text, txtBoxDienThoai.Text, txtBoxDiaChi.Text);      //thuc hien them khach hang moi
-            test = XeBUS.Instance.ThemXe(txtBoxBienSo.Text, comBoxHieuXe.SelectedValue.ToString(), KhachHangBUS.Instance.LayMaKH(txtBoxTenKH.Text, txtBoxDienThoai.Text), now);
-            if (test != 0)
-            {
-                MessageBox.Show("Thêm xe thành công!");
-                progressBarSoXeDaThem.Value = progressBarSoXeDaThem.Value + 1;
-                this.xETableAdapter.Fill(this.quanLyGarageDataSet.XE);
-            }
-            if (progressBarSoXeDaThem.Value == progressBarSoXeDaThem.Maximum)
-            {
-                txtBoxTenKH.Clear();
-                txtBoxDienThoai.Clear();
-                txtBoxDiaChi.Clear();
-                txtBoxBienSo.Clear();
-                txtBoxTenKH.Visible = false;
-                txtBoxDienThoai.Visible = false;
-                txtBoxDiaChi.Visible = false;
-                txtBoxBienSo.Visible = false;
-                buttonThemXe.Enabled = false;
-                buttonClear.Enabled = false;
-            }
-            else
-            {
-                txtBoxTenKH.Clear();
-                txtBoxDienThoai.Clear();
-                txtBoxDiaChi.Clear();
-                txtBoxBienSo.Clear();
-            }
+            }                        
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
@@ -372,7 +370,7 @@ namespace GUI
 
         private void buttonLapPhieuThuTienPTT_Click(object sender, EventArgs e)
         {
-            if (textBoxSoTienThuPTT.Text != "")
+            if (textBoxSoTienThuPTT.Text != "" & textBoxSoTienThuPTT.Text != "0")
             {
                 if (PhieuThuTienBUS.Instance.LayTienNoKH(comboBienSoXe2.Text) < int.Parse(textBoxSoTienThuPTT.Text))
                     MessageBox.Show("Vui lòng nhập lại số tiền! Số tiền đã nhập lớn hơn số tiền đang nợ. (Để xem số tiền nợ vui lòng sử dụng trang tra cứu bên phải.)");
@@ -399,30 +397,35 @@ namespace GUI
 
         private void buttonLapPhieuNhapVTPT_Click(object sender, EventArgs e) //chỗ này chỉnh lại database này
         {
-            if (textBoxSoLuongVTPT.Text == "")
+            if (textBoxSoLuongVTPT.Text == "0" || textBoxSoLuongVTPT.Text.Length == 0)
                 MessageBox.Show("Vui lòng nhập số lượng vật tư trước khi thêm mới phiếu nhập !");
             else
             {
                 int test = 0;
                 test = PhieuNhapVTPTBUS.Instance.NhapVTPT(comboBoxTenVTPT.SelectedValue.ToString(), textBoxSoLuongVTPT.Text, now);
                 if (test > 0)
-                    MessageBox.Show("Nhập vật thêm tư phụ tùng thành công!");
+                    MessageBox.Show("Nhập vật tư phụ tùng thành công!");
             }
         }
 
         private void buttonTaoMoiVTPT_Click(object sender, EventArgs e) //chỗ này thiếu thêm thời gian, để tối về anh kiểm tra thử database có thêm chưa, nếu chưa thêm thì anh gởi lệnh SQL qua và sửa vào trong này
         {
             DateTime now = DateTime.Now;
-            if (textBoxSoLuongVTPT.Text == "")
-                MessageBox.Show("Vui lòng nhập số lượng vật tư trước khi thêm mới vật tư vào kho !");
+            if (textBoxSoLuongVTPT.Text == "0" || textBoxSoLuongVTPT.Text.Length == 0)
+            { MessageBox.Show("Vui lòng nhập số lượng vật tư trước khi thêm  vật tư vào kho !"); }
             else
             {
-                int test = 0;
-                test = PhieuNhapVTPTBUS.Instance.NhapMoiVTPT(textBoxTenVTPTMoi.Text, textBoxSoLuongVTPT.Text, textBoxGiaVTPT.Text, now);
-                if (test > 0)
+                if (textBoxGiaVTPT.Text == "0" || textBoxGiaVTPT.Text.Length == 0)
+                { MessageBox.Show("Vui lòng nhập Giá vật tư trước khi thêm mới vật tư vào kho !"); }
+                else
                 {
-                    MessageBox.Show("Nhập mới vật tư phụ tùng thành công");
-                    this.kHOTableAdapter.Fill(this.quanLyGarageDataSet.KHO);
+                    int test = 0;
+                    test = PhieuNhapVTPTBUS.Instance.NhapMoiVTPT(textBoxTenVTPTMoi.Text, textBoxSoLuongVTPT.Text, textBoxGiaVTPT.Text, now);
+                    if (test > 0)
+                    {
+                        MessageBox.Show("Nhập mới vật tư phụ tùng thành công");
+                        this.kHOTableAdapter.Fill(this.quanLyGarageDataSet.KHO);
+                    }
                 }
             }
         }
@@ -501,13 +504,20 @@ namespace GUI
 
         private void ButtonNhapVTPTPhieuSuaChua_Click(object sender, EventArgs e)
         {
-            if (PhieuSuaChuaBUS.Instance.KiemTraSoLuong(comboBoxVTPTPhieuSuaChua.SelectedValue.ToString(), int.Parse(textBoxSoLuongVTPTPhieuSuaChua.Text)))
+            if (textBoxSoLuongVTPTPhieuSuaChua.Text.Length == 0 || textBoxSoLuongVTPTPhieuSuaChua.Text == "0")
             {
-                NhapVTPTChoPhieuSuaChua(PhieuSuaChuaBUS.Instance.LayDonGiaVTPT(comboBoxVTPTPhieuSuaChua.SelectedValue.ToString()));
+                MessageBox.Show("Vui lòng kiểm tra lại số lượng vật tư phụ tùng!");
             }
             else
             {
-                MessageBox.Show("Vui lòng kiểm tra lại số lượng vật tư phụ tùng!", "Kho không đủ đáp ứng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (PhieuSuaChuaBUS.Instance.KiemTraSoLuong(comboBoxVTPTPhieuSuaChua.SelectedValue.ToString(), int.Parse(textBoxSoLuongVTPTPhieuSuaChua.Text)))
+                {
+                    NhapVTPTChoPhieuSuaChua(PhieuSuaChuaBUS.Instance.LayDonGiaVTPT(comboBoxVTPTPhieuSuaChua.SelectedValue.ToString()));
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng kiểm tra lại số lượng vật tư phụ tùng!", "Kho không đủ đáp ứng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -720,6 +730,11 @@ namespace GUI
             dataGridViewPTT.DataSource = BUS.PhieuThuTienBUS.Instance.LayPTT();
             dataGridViewPTT.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewPTT.AutoResizeColumns();
+        }
+
+        private void txtBoxTenKH_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
