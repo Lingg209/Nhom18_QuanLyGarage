@@ -35,9 +35,9 @@ namespace DAO
 
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { User, Pass });
 
-            //string qh = result.Rows[0][4].ToString();
-            //return qh ;
-            return "admin";
+            string qh = result.Rows[0][4].ToString();
+            return qh ;
+            
         }
 
         public string LayHoTen(string User, string Pass)

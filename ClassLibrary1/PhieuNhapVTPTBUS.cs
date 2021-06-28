@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,10 @@ namespace BUS
     {
         private static PhieuNhapVTPTBUS instance;
         private PhieuNhapVTPTBUS() { }
+        public DataTable LayTatCaPN()
+        {
+            return DAO.PhieuNhapVTPTDAO.Instance.LayTatCaPN();
+        }
         public static PhieuNhapVTPTBUS Instance
         {
             get { if (instance == null) instance = new PhieuNhapVTPTBUS(); return instance; }
@@ -24,5 +29,6 @@ namespace BUS
         {
             return PhieuNhapVTPTDAO.Instance.NhapMoiVTPT(ten, int.Parse(soluong), int.Parse(gia), now);
         }
+
     }
 }

@@ -13,6 +13,10 @@ namespace BUS
         private static PhieuSuaChuaBUS instance;
         private PhieuSuaChuaBUS() { }
         private DataTable VTPTDangNhap;
+        public DataTable LayPSC()
+        {
+            return DAO.PhieuSuaChuaDAO.Instance.LayPSC();
+        }
         public static PhieuSuaChuaBUS Instance
         {
             get { if (instance == null) instance = new PhieuSuaChuaBUS(); return instance; }

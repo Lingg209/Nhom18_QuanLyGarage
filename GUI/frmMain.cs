@@ -11,7 +11,7 @@ using BUS;
 
 
 namespace GUI
-{
+{   
     public partial class frmMain : Form
     {
         DateTime now = DateTime.Now;
@@ -157,6 +157,12 @@ namespace GUI
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'quanLyGarageDataSet1.PHIEUTHUTIEN' table. You can move, or remove it, as needed.
+            this.pHIEUTHUTIENTableAdapter.Fill(this.quanLyGarageDataSet1.PHIEUTHUTIEN);
+            // TODO: This line of code loads data into the 'quanLyGarageDataSet.PHIEUSUACHUA' table. You can move, or remove it, as needed.
+            this.pHIEUSUACHUATableAdapter.Fill(this.quanLyGarageDataSet.PHIEUSUACHUA);
+            // TODO: This line of code loads data into the 'quanLyGarageDataSet.PHIEUNHAPVTPT' table. You can move, or remove it, as needed.
+            this.pHIEUNHAPVTPTTableAdapter.Fill(this.quanLyGarageDataSet.PHIEUNHAPVTPT);
             // TODO: This line of code loads data into the 'quanLyGarageDataSet.TIENCONG' table. You can move, or remove it, as needed.
             this.tIENCONGTableAdapter.Fill(this.quanLyGarageDataSet.TIENCONG);
             // TODO: This line of code loads data into the 'quanLyGarageDataSet.KHO' table. You can move, or remove it, as needed.
@@ -254,16 +260,6 @@ namespace GUI
             textBoxTongDoanhThu.Clear();
         }
 
-        private void HướngDẫnSửDụngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("D:/NMCNPM/PROJECTS/QuanLyGarage/Readme.txt") ;
-        }
-
-        private void LiênHệToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://www.facebook.com/linhhhnhiii/");
-        }
-
         private void ButtonPhieuThuTienMoiPTT_Click(object sender, EventArgs e)
         {
             textBoxDienThoaiPTT.Clear();
@@ -304,12 +300,6 @@ namespace GUI
             buttonLapPhieuNhapVTPT.Visible = true;
             buttonTaoMoiVTPT.Visible = true;
         }
-
-
-        //private void TPQuyDinh_Enter(object sender, EventArgs e)
-        //{
-        //    this.dataGridViewGiaTriHienTai.DataSource = DataProvider.Instance.ExecuteQuery("select * from THAMSO");
-        //}
 
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -385,7 +375,7 @@ namespace GUI
             if (textBoxSoTienThuPTT.Text != "")
             {
                 if (PhieuThuTienBUS.Instance.LayTienNoKH(comboBienSoXe2.Text) < int.Parse(textBoxSoTienThuPTT.Text))
-                    MessageBox.Show("Vui lòng nhập lại tiền thu!");
+                    MessageBox.Show("Vui lòng nhập lại số tiền! Số tiền đã nhập lớn hơn số tiền đang nợ. (Để xem số tiền nợ vui lòng sử dụng trang tra cứu bên phải.)");
                 else
                 {
                     int test = 0;
@@ -396,7 +386,7 @@ namespace GUI
                 }
             }
             else
-                MessageBox.Show("Vui lòng nhập số tiền thu !");
+                MessageBox.Show("Vui lòng nhập số tiền thu!");
         }
 
         private void comboBienSoXe2_SelectionChangeCommitted(object sender, EventArgs e)
@@ -668,6 +658,68 @@ namespace GUI
         private void pnChonThoiDiem_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void dataGridViewTraCuu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel31_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPNVTPT_Click(object sender, EventArgs e)
+        {
+
+            dataGridViewPnVT.DataSource = BUS.PhieuNhapVTPTBUS.Instance.LayTatCaPN();
+            dataGridViewPnVT.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewPnVT.AutoResizeColumns();
+            
+
+        }
+
+        private void btnKho_Click(object sender, EventArgs e)
+        {
+            dataGridViewKho.DataSource = BUS.KhoBUS.Instance.LayKHO();
+            dataGridViewKho.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewKho.AutoResizeColumns();
+
+        }
+
+        private void tabPage4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dataGridViewPSC.DataSource = BUS.PhieuSuaChuaBUS.Instance.LayPSC();
+            dataGridViewPSC.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewPSC.AutoResizeColumns();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            dataGridViewPTT.DataSource = BUS.PhieuThuTienBUS.Instance.LayPTT();
+            dataGridViewPTT.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewPTT.AutoResizeColumns();
         }
     }
 }

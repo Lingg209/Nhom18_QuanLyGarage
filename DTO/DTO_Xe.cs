@@ -12,6 +12,7 @@ namespace DTO
         public string sBienSo;
         public string sHieuXe;
         public DateTime dtNgaySuaChua;
+        public int sTienNo;
 
         public int MaKH
         {
@@ -37,12 +38,19 @@ namespace DTO
             set { dtNgaySuaChua = value; }
         }
 
-        public DTO_Xe(int makh,string bienso, string hieuxe, DateTime ngaysuachua)
+        public int TienNo
+        {
+            get { return sTienNo; }
+            set { sTienNo = value; }
+        }
+
+        public DTO_Xe(int makh,string bienso, string hieuxe, DateTime ngaysuachua, int tienno)
         {
             this.iMaKH = makh;
             this.sBienSo = bienso;
             this.sHieuXe = hieuxe;
             this.dtNgaySuaChua = ngaysuachua;
+            this.sTienNo = tienno;
         }
         public DTO_Xe()
         {

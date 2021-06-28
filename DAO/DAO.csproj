@@ -45,6 +45,7 @@
     <Compile Include="BaoCaoTonDAO.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="KhachHangDAO.cs" />
+    <Compile Include="KhoDAO.cs" />
     <Compile Include="PhieuNhapVTPTDAO.cs" />
     <Compile Include="PhieuSuaChuaDAO.cs" />
     <Compile Include="PhieuThuTienDAO.cs" />

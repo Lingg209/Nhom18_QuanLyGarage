@@ -111,19 +111,5 @@ namespace DAO
                 return true;
             return false;
         }
-
-        //public void TaoBaoCaoTonThangDau(DateTime t)
-        //{
-        //    if(ThangDauTien())
-        //    {
-        //        DataTable dt = DataProvider.Instance.ExecuteQuery("Select * from KHO");
-        //        int re = DataProvider.Instance.ExecuteNonQuery("Insert into BAOCAOTON values (" + 0 + " , " + t + " )");
-        //        foreach(DataRow row in dt.Rows)
-        //        {
-
-        //        }
-        //    }
-        //}
-
     }
 }

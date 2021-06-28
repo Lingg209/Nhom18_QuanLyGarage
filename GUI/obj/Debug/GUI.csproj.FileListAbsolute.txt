@@ -58,3 +58,43 @@ D:\NMCNPM\PROJECTS\QUAN_LY_GARA_OTO\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.c
 D:\NMCNPM\PROJECTS\QUAN_LY_GARA_OTO\GUI\obj\Debug\GUI.csproj.CopyComplete
 D:\NMCNPM\PROJECTS\QUAN_LY_GARA_OTO\GUI\obj\Debug\GUI.exe
 D:\NMCNPM\PROJECTS\QUAN_LY_GARA_OTO\GUI\obj\Debug\GUI.pdb
+D:\QuanLyGarage\GUI\bin\Debug\GUI.exe.config
+D:\QuanLyGarage\GUI\bin\Debug\GUI.exe
+D:\QuanLyGarage\GUI\bin\Debug\GUI.pdb
+D:\QuanLyGarage\GUI\bin\Debug\BUS.dll
+D:\QuanLyGarage\GUI\bin\Debug\DTO.dll
+D:\QuanLyGarage\GUI\bin\Debug\DAO.dll
+D:\QuanLyGarage\GUI\bin\Debug\BUS.pdb
+D:\QuanLyGarage\GUI\bin\Debug\DTO.pdb
+D:\QuanLyGarage\GUI\bin\Debug\DAO.pdb
+D:\QuanLyGarage\GUI\obj\Debug\GUI.csprojAssemblyReference.cache
+D:\QuanLyGarage\GUI\obj\Debug\GUI.frmDangNhap.resources
+D:\QuanLyGarage\GUI\obj\Debug\GUI.frmMain.resources
+D:\QuanLyGarage\GUI\obj\Debug\GUI.frmThayDoiMatKhau.resources
+D:\QuanLyGarage\GUI\obj\Debug\GUI.frmThongTinTaiKhoan.resources
+D:\QuanLyGarage\GUI\obj\Debug\GUI.Properties.Resources.resources
+D:\QuanLyGarage\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+D:\QuanLyGarage\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+D:\QuanLyGarage\GUI\obj\Debug\GUI.csproj.CopyComplete
+D:\QuanLyGarage\GUI\obj\Debug\GUI.exe
+D:\QuanLyGarage\GUI\obj\Debug\GUI.pdb
+D:\NMCNPM\PROJECTS\QuanLyGarage - Copy\GUI\bin\Debug\GUI.exe.config
+D:\NMCNPM\PROJECTS\QuanLyGarage - Copy\GUI\bin\Debug\GUI.exe
+D:\NMCNPM\PROJECTS\QuanLyGarage - Copy\GUI\bin\Debug\GUI.pdb
+D:\NMCNPM\PROJECTS\QuanLyGarage - Copy\GUI\bin\Debug\BUS.dll
+D:\NMCNPM\PROJECTS\QuanLyGarage - Copy\GUI\bin\Debug\DTO.dll
+D:\NMCNPM\PROJECTS\QuanLyGarage - Copy\GUI\bin\Debug\DAO.dll
+D:\NMCNPM\PROJECTS\QuanLyGarage - Copy\GUI\bin\Debug\BUS.pdb
+D:\NMCNPM\PROJECTS\QuanLyGarage - Copy\GUI\bin\Debug\DTO.pdb
+D:\NMCNPM\PROJECTS\QuanLyGarage - Copy\GUI\bin\Debug\DAO.pdb
+D:\NMCNPM\PROJECTS\QuanLyGarage - Copy\GUI\obj\Debug\GUI.csprojAssemblyReference.cache
+D:\NMCNPM\PROJECTS\QuanLyGarage - Copy\GUI\obj\Debug\GUI.frmDangNhap.resources
+D:\NMCNPM\PROJECTS\QuanLyGarage - Copy\GUI\obj\Debug\GUI.frmMain.resources
+D:\NMCNPM\PROJECTS\QuanLyGarage - Copy\GUI\obj\Debug\GUI.frmThayDoiMatKhau.resources
+D:\NMCNPM\PROJECTS\QuanLyGarage - Copy\GUI\obj\Debug\GUI.frmThongTinTaiKhoan.resources
+D:\NMCNPM\PROJECTS\QuanLyGarage - Copy\GUI\obj\Debug\GUI.Properties.Resources.resources
+D:\NMCNPM\PROJECTS\QuanLyGarage - Copy\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+D:\NMCNPM\PROJECTS\QuanLyGarage - Copy\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+D:\NMCNPM\PROJECTS\QuanLyGarage - Copy\GUI\obj\Debug\GUI.csproj.CopyComplete
+D:\NMCNPM\PROJECTS\QuanLyGarage - Copy\GUI\obj\Debug\GUI.exe
+D:\NMCNPM\PROJECTS\QuanLyGarage - Copy\GUI\obj\Debug\GUI.pdb

@@ -10,3 +10,15 @@ D:\NMCNPM\PROJECTS\QUAN_LY_GARA_OTO\DTO\obj\Debug\DTO.csprojAssemblyReference.ca
 D:\NMCNPM\PROJECTS\QUAN_LY_GARA_OTO\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 D:\NMCNPM\PROJECTS\QUAN_LY_GARA_OTO\DTO\obj\Debug\DTO.dll
 D:\NMCNPM\PROJECTS\QUAN_LY_GARA_OTO\DTO\obj\Debug\DTO.pdb
+D:\NMCNPM\PROJECTS\QuanLyGarage - Copy\DTO\bin\Debug\DTO.dll
+D:\NMCNPM\PROJECTS\QuanLyGarage - Copy\DTO\bin\Debug\DTO.pdb
+D:\NMCNPM\PROJECTS\QuanLyGarage - Copy\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+D:\NMCNPM\PROJECTS\QuanLyGarage - Copy\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\NMCNPM\PROJECTS\QuanLyGarage - Copy\DTO\obj\Debug\DTO.dll
+D:\NMCNPM\PROJECTS\QuanLyGarage - Copy\DTO\obj\Debug\DTO.pdb
+D:\NMCNPM\PROJECTS\QuanLyGarage\DTO\bin\Debug\DTO.dll
+D:\NMCNPM\PROJECTS\QuanLyGarage\DTO\bin\Debug\DTO.pdb
+D:\NMCNPM\PROJECTS\QuanLyGarage\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+D:\NMCNPM\PROJECTS\QuanLyGarage\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\NMCNPM\PROJECTS\QuanLyGarage\DTO\obj\Debug\DTO.dll
+D:\NMCNPM\PROJECTS\QuanLyGarage\DTO\obj\Debug\DTO.pdb

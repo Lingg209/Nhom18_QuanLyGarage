@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,13 @@ namespace DAO
     {
         private static PhieuNhapVTPTDAO instance;
         private PhieuNhapVTPTDAO() { }
+        public DataTable LayTatCaPN()
+        {
+            DataTable dt = new DataTable();
+            String query = "Select * from PHIEUNHAPVTPT";
+            dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
+        }
         public static PhieuNhapVTPTDAO Instance
         {
             get { if (instance == null) instance = new PhieuNhapVTPTDAO(); return instance; }

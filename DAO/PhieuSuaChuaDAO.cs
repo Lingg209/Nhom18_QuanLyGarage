@@ -15,7 +15,13 @@ namespace DAO
             get { if (instance == null) instance = new PhieuSuaChuaDAO(); return instance; }
             private set { PhieuSuaChuaDAO.instance = value; }
         }
-
+        public DataTable LayPSC()
+        {
+            DataTable dt = new DataTable();
+            String query = "Select * from PHIEUSUACHUA";
+            dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
+        }
         public DataTable TaoDataTable(int a, string[] name)//Tạo dt với số cột và nội dung từng cột
         {
             DataTable dt = new DataTable();
