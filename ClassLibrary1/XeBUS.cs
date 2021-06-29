@@ -26,9 +26,9 @@ namespace BUS
         }
         private XeBUS() { }
 
-        public DataTable CacXeDaTiepNhan()
+        public DataTable CacXeDaTiepNhan(DateTime now)
         {
-            return XeDAO.Instance.CacXeDaTiepNhan();
+            return XeDAO.Instance.CacXeDaTiepNhan(now);
         }
 
         public int SoXeTiepNhanTrongNgay(DateTime now)
@@ -37,9 +37,9 @@ namespace BUS
             return int.Parse(dt.Rows[0][0].ToString());
         }
 
-        public DataTable LamMoiDanhSachXe()
+        public DataTable LamMoiDanhSachXe(DateTime now)
         {
-            return XeDAO.Instance.LamMoiDanhSachXe();
+            return XeDAO.Instance.LamMoiDanhSachXe(now);
         }
 
         public DataTable TimKiemTuongDoi(string DuLieu)

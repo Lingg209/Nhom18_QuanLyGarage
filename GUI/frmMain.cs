@@ -172,7 +172,7 @@ namespace GUI
             // TODO: This line of code loads data into the 'quanLyGarageDataSet.HIEUXE' table. You can move, or remove it, as needed.
             this.hIEUXETableAdapter.Fill(this.quanLyGarageDataSet.HIEUXE);
             // Lấy dữ liệu các xe đã tiếp nhận
-            dataGridViewXeDaTiepNhan.DataSource = XeBUS.Instance.CacXeDaTiepNhan();
+            dataGridViewXeDaTiepNhan.DataSource = XeBUS.Instance.CacXeDaTiepNhan(now);
             dataGridViewXeDaTiepNhan.Show();
             // Lấy thông tin cho progressbar số xe đã tiếp nhận 1 ngày
             textBoxNgayThuTien.Text = now.ToString("dd-MM-yyyy");
@@ -308,50 +308,55 @@ namespace GUI
 
         private void buttonThemXe_Click(object sender, EventArgs e)
         {
-            if (txtBoxDienThoai.Text.Length == 0)
-                MessageBox.Show("Vui lòng nhập điện thoại của khách hàng!");
+            if (txtBoxTenKH.Text.Length == 0)
+                MessageBox.Show("Vui lòng nhập lại tên khách hàng!");
             else
             {
-                if (txtBoxDiaChi.Text.Length == 0)
-                    MessageBox.Show("Vui lòng nhập địa chỉ khách hàng!");
+                if (txtBoxDienThoai.Text.Length < 10 & txtBoxDienThoai.Text.Length == 0)
+                    MessageBox.Show("Vui lòng nhập lại số điện thoại của khách hàng!");
                 else
                 {
-                    if (txtBoxBienSo.Text.Length == 0)
-                        MessageBox.Show("Vui lòng nhập biển số xe !");
+                    if (txtBoxDiaChi.Text.Length == 0)
+                        MessageBox.Show("Vui lòng nhập lại địa chỉ khách hàng!");
                     else
                     {
-                        int test = 0;
-                        test = KhachHangBUS.Instance.ThemKhachHang(txtBoxTenKH.Text, txtBoxDienThoai.Text, txtBoxDiaChi.Text);      //thuc hien them khach hang moi
-                        test = XeBUS.Instance.ThemXe(txtBoxBienSo.Text, comBoxHieuXe.SelectedValue.ToString(), KhachHangBUS.Instance.LayMaKH(txtBoxTenKH.Text, txtBoxDienThoai.Text), now);
-                        if (test != 0)
-                        {
-                            MessageBox.Show("Thêm xe thành công!");
-                            progressBarSoXeDaThem.Value = progressBarSoXeDaThem.Value + 1;
-                            this.xETableAdapter.Fill(this.quanLyGarageDataSet.XE);
-                        }
-                        if (progressBarSoXeDaThem.Value == progressBarSoXeDaThem.Maximum)
-                        {
-                            txtBoxTenKH.Clear();
-                            txtBoxDienThoai.Clear();
-                            txtBoxDiaChi.Clear();
-                            txtBoxBienSo.Clear();
-                            txtBoxTenKH.Visible = false;
-                            txtBoxDienThoai.Visible = false;
-                            txtBoxDiaChi.Visible = false;
-                            txtBoxBienSo.Visible = false;
-                            buttonThemXe.Enabled = false;
-                            buttonClear.Enabled = false;
-                        }
+                        if (txtBoxBienSo.Text.Length == 0)
+                            MessageBox.Show("Vui lòng nhập lại biển số xe !");
                         else
                         {
-                            txtBoxTenKH.Clear();
-                            txtBoxDienThoai.Clear();
-                            txtBoxDiaChi.Clear();
-                            txtBoxBienSo.Clear();
+                            int test = 0;
+                            test = KhachHangBUS.Instance.ThemKhachHang(txtBoxTenKH.Text, txtBoxDienThoai.Text, txtBoxDiaChi.Text);      //thuc hien them khach hang moi
+                            test = XeBUS.Instance.ThemXe(txtBoxBienSo.Text, comBoxHieuXe.SelectedValue.ToString(), KhachHangBUS.Instance.LayMaKH(txtBoxTenKH.Text, txtBoxDienThoai.Text), now);
+                            if (test != 0)
+                            {
+                                MessageBox.Show("Thêm xe thành công!");
+                                progressBarSoXeDaThem.Value = progressBarSoXeDaThem.Value + 1;
+                                this.xETableAdapter.Fill(this.quanLyGarageDataSet.XE);
+                            }
+                            if (progressBarSoXeDaThem.Value == progressBarSoXeDaThem.Maximum)
+                            {
+                                txtBoxTenKH.Clear();
+                                txtBoxDienThoai.Clear();
+                                txtBoxDiaChi.Clear();
+                                txtBoxBienSo.Clear();
+                                txtBoxTenKH.Visible = false;
+                                txtBoxDienThoai.Visible = false;
+                                txtBoxDiaChi.Visible = false;
+                                txtBoxBienSo.Visible = false;
+                                buttonThemXe.Enabled = false;
+                                buttonClear.Enabled = false;
+                            }
+                            else
+                            {
+                                txtBoxTenKH.Clear();
+                                txtBoxDienThoai.Clear();
+                                txtBoxDiaChi.Clear();
+                                txtBoxBienSo.Clear();
+                            }
                         }
                     }
                 }
-            }                        
+            }
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
@@ -364,7 +369,7 @@ namespace GUI
 
         private void buttonLamMoi_Click(object sender, EventArgs e)
         {
-            dataGridViewXeDaTiepNhan.DataSource = XeBUS.Instance.LamMoiDanhSachXe();
+            dataGridViewXeDaTiepNhan.DataSource = XeBUS.Instance.LamMoiDanhSachXe(now);
             dataGridViewXeDaTiepNhan.Show();
         }
 
@@ -456,41 +461,69 @@ namespace GUI
 
         private void btnCapNhatSoHieuXe_Click(object sender, EventArgs e)
         {
-            int test = BUS.QuyDinhBUS.Instance.CapNhatSoHieuXe(txtBoxSoHieuXe.Text);
-            if (test != 0)
+            if (txtBoxSoHieuXe.Text == "")
             {
-                MessageBox.Show("Thay đổi số hiệu xe thành công !");
-                txtBoxSoHieuXe.Clear();
-            }
+                MessageBox.Show("Vui lòng nhập số hiệu xe !");
+            }else
+            {
+                int test = BUS.QuyDinhBUS.Instance.CapNhatSoHieuXe(txtBoxSoHieuXe.Text);
+                if (test != 0)
+                {
+                    MessageBox.Show("Thay đổi số hiệu xe thành công !");
+                    txtBoxSoHieuXe.Clear();
+                }
+            }                
         }
 
         private void btnCapNhatSoXeSuaToiDa_Click(object sender, EventArgs e)
         {
-            int test = BUS.QuyDinhBUS.Instance.CapNhatSoXeSuaToiDa(txtBoxSoXeSuaChuaToiDa.Text);
-            if (test != 0)
+            if (txtBoxSoXeSuaChuaToiDa.Text == "")
             {
-                MessageBox.Show("Thay đổi số xe sửa tối đa thành công !");
-                txtBoxSoHieuXe.Clear();
+                MessageBox.Show("Vui lòng nhập số xe sửa tối đa !");
+            }
+            else
+            {
+                int test = BUS.QuyDinhBUS.Instance.CapNhatSoXeSuaToiDa(txtBoxSoXeSuaChuaToiDa.Text);
+                if (test != 0)
+                {
+                    MessageBox.Show("Thay đổi số xe sửa tối đa thành công !");
+                    txtBoxSoXeSuaChuaToiDa.Clear();
+                }
             }
         }
 
         private void btnCapNhatSoLoaiVatTu_Click(object sender, EventArgs e)
         {
-            int test = BUS.QuyDinhBUS.Instance.CapNhatSoLoaiVatTu(txtBoxSoLoaiVatTu.Text);
-            if (test != 0)
+            if (txtBoxSoLoaiVatTu.Text == "")
             {
-                MessageBox.Show("Thay đổi số loại vật tư thành công !");
-                txtBoxSoHieuXe.Clear();
+                MessageBox.Show("Vui lòng nhập số loại vật tư !");
             }
+            else
+            {
+                int test = BUS.QuyDinhBUS.Instance.CapNhatSoLoaiVatTu(txtBoxSoLoaiVatTu.Text);
+                if (test != 0)
+                {
+                    MessageBox.Show("Thay đổi số loại vật tư thành công !");
+                    txtBoxSoLoaiVatTu.Clear();
+                }
+            }           
         }
 
         private void btnCapNhatSoLoaiTienCong_Click(object sender, EventArgs e)
         {
-            int test = BUS.QuyDinhBUS.Instance.CapNhatSoLoaiTienCong(txtBoxSoLoaiTienCong.Text);
-            if (test != 0)
+            if (txtBoxSoLoaiTienCong.Text == "")
             {
-                MessageBox.Show("Thay đổi số loại tiền công thành công !");
-                txtBoxSoLoaiTienCong.Clear();
+                MessageBox.Show("Vui lòng nhập số loại vật tư !");
+            }
+            else
+            {
+
+                int test = BUS.QuyDinhBUS.Instance.CapNhatSoLoaiTienCong(txtBoxSoLoaiTienCong.Text);
+                if (test != 0)
+                {
+                    MessageBox.Show("Thay đổi số loại tiền công thành công !");
+                    txtBoxSoLoaiTienCong.Clear();
+                }
             }
         }
 
@@ -504,34 +537,70 @@ namespace GUI
 
         private void ButtonNhapVTPTPhieuSuaChua_Click(object sender, EventArgs e)
         {
-            if (textBoxSoLuongVTPTPhieuSuaChua.Text.Length == 0 || textBoxSoLuongVTPTPhieuSuaChua.Text == "0")
+            if (comboBoxBienSoXe1.Text == "--select--")
             {
-                MessageBox.Show("Vui lòng kiểm tra lại số lượng vật tư phụ tùng!");
-            }
-            else
+                MessageBox.Show("Vui lòng chọn một biển số xe!");
+
+            }else
             {
-                if (PhieuSuaChuaBUS.Instance.KiemTraSoLuong(comboBoxVTPTPhieuSuaChua.SelectedValue.ToString(), int.Parse(textBoxSoLuongVTPTPhieuSuaChua.Text)))
+                if (comboBoxVTPTPhieuSuaChua.Text.Length == 0)
                 {
-                    NhapVTPTChoPhieuSuaChua(PhieuSuaChuaBUS.Instance.LayDonGiaVTPT(comboBoxVTPTPhieuSuaChua.SelectedValue.ToString()));
+                    MessageBox.Show("Vui lòng chọn vật tư phụ tùng!");
+                }else
+                if (textBoxSoLuongVTPTPhieuSuaChua.Text.Length == 0 || textBoxSoLuongVTPTPhieuSuaChua.Text == "0")
+                {
+                    MessageBox.Show("Vui lòng kiểm tra lại số lượng vật tư phụ tùng!");
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng kiểm tra lại số lượng vật tư phụ tùng!", "Kho không đủ đáp ứng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (PhieuSuaChuaBUS.Instance.KiemTraSoLuong(comboBoxVTPTPhieuSuaChua.SelectedValue.ToString(), int.Parse(textBoxSoLuongVTPTPhieuSuaChua.Text)))
+                    {
+                        NhapVTPTChoPhieuSuaChua(PhieuSuaChuaBUS.Instance.LayDonGiaVTPT(comboBoxVTPTPhieuSuaChua.SelectedValue.ToString()));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Vui lòng kiểm tra lại số lượng vật tư phụ tùng!", "Kho không đủ đáp ứng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-            }
+            }            
         }
 
         private void ButtonNhapTienCongPhieuSuaChua_Click(object sender, EventArgs e)
         {
-            NhapTienCongChoPhieuSuaChua(PhieuSuaChuaBUS.Instance.LayChiPhiTienCong(comboBoxTienCongPhieuSuaChua.SelectedValue.ToString()));
+            if (comboBoxBienSoXe1.Text == "--select--")
+            {
+                MessageBox.Show("Vui lòng chọn một biển số xe!");
+
+            }
+            else
+            {
+                if (comboBoxTienCongPhieuSuaChua.Text.Length == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn tiền công!");
+                }
+                else
+                {
+                    NhapTienCongChoPhieuSuaChua(PhieuSuaChuaBUS.Instance.LayChiPhiTienCong(comboBoxTienCongPhieuSuaChua.SelectedValue.ToString()));
+
+                }
+            }
         }
 
         private void BtnHoanTat_Click(object sender, EventArgs e)
         {
+            
             int TongTien;
             TongTien = TinhTongThanhTien() + TinhTongChiPhi();
-            textBoxTongTienPhieuSuaChua.Text = TongTien.ToString();
-            btnHoanTatClicked = true;
+            if (TongTien == 0 )
+            {
+                MessageBox.Show("Phiếu sửa chữa trống ! Vui lòng thêm dịch vụ");
+
+            }
+            else
+            {
+                textBoxTongTienPhieuSuaChua.Text = TongTien.ToString();
+                btnHoanTatClicked = true;
+            }
         }
 
         private void BtnTaoMoiPCS_Click(object sender, EventArgs e)
@@ -733,6 +802,26 @@ namespace GUI
         }
 
         private void txtBoxTenKH_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBoxSoHieuXe_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBoxSoXeSuaChuaToiDa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxSoLuongVTPTPhieuSuaChua_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxBienSoXe1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

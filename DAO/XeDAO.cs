@@ -25,9 +25,9 @@ namespace DAO
         }
         private XeDAO() { }
 
-        public DataTable CacXeDaTiepNhan()
+        public DataTable CacXeDaTiepNhan(DateTime now)
         {
-            string query = "SELECT BienSo, TenHieuXe, TenKH, DienThoai, DiaChi FROM XE, HIEUXE as HX, KHACHHANG as KH WHERE XE.MaKH = KH.MaKH and XE.MaHX = HX.MaHX and XE.TrangThai = 1";
+            string query = "SELECT TenHieuXe, BienSo, TenKH, DienThoai, DiaChi, TrangThai FROM XE, HIEUXE as HX, KHACHHANG as KH WHERE Xe.MaKH = KH.MaKH and Xe.MaHX = HX.MaHX and day(NgayTiepNhan) = " + now.Day + " and month(NgayTiepNhan) = " + now.Month + " and year(NgayTiepNhan) = " + now.Year;
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
@@ -37,9 +37,9 @@ namespace DAO
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
-        public DataTable LamMoiDanhSachXe()
+        public DataTable LamMoiDanhSachXe(DateTime now)
         {
-            string query = "SELECT TenHieuXe, BienSo, TenKH, DienThoai, DiaChi FROM XE, HIEUXE as HX, KHACHHANG as KH WHERE Xe.MaKH = KH.MaKH and Xe.MaHX = HX.MaHX and XE.TrangThai = 1";
+            string query = "SELECT TenHieuXe, BienSo, TenKH, DienThoai, DiaChi, TrangThai FROM XE, HIEUXE as HX, KHACHHANG as KH WHERE Xe.MaKH = KH.MaKH and Xe.MaHX = HX.MaHX and day(NgayTiepNhan) = " + now.Day + " and month(NgayTiepNhan) = " + now.Month + " and year(NgayTiepNhan) = " + now.Year ;
             return DataProvider.Instance.ExecuteQuery(query);
         }
 

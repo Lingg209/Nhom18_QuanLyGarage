@@ -179,6 +179,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.MaPhuTung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenVatTuPhuTung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel28 = new System.Windows.Forms.Panel();
             this.panel32 = new System.Windows.Forms.Panel();
             this.labelGiaVTPT = new System.Windows.Forms.Label();
@@ -274,8 +276,10 @@
             this.pHIEUNHAPVTPTTableAdapter = new GUI.QuanLyGarageDataSetTableAdapters.PHIEUNHAPVTPTTableAdapter();
             this.pHIEUSUACHUATableAdapter = new GUI.QuanLyGarageDataSetTableAdapters.PHIEUSUACHUATableAdapter();
             this.pHIEUTHUTIENTableAdapter = new GUI.QuanLyGarageDataSetTableAdapters.PHIEUTHUTIENTableAdapter();
-            this.MaPhuTung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenVatTuPhuTung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maPhuTungDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenVatTuPhuTungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soLuongDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donGiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStripCongCu.SuspendLayout();
             this.tPQuyDinh.SuspendLayout();
             this.panelQuyDinhHienHanh.SuspendLayout();
@@ -636,6 +640,7 @@
             this.txtBoxSoXeSuaChuaToiDa.Name = "txtBoxSoXeSuaChuaToiDa";
             this.txtBoxSoXeSuaChuaToiDa.Size = new System.Drawing.Size(224, 30);
             this.txtBoxSoXeSuaChuaToiDa.TabIndex = 1;
+            this.txtBoxSoXeSuaChuaToiDa.TextChanged += new System.EventHandler(this.txtBoxSoXeSuaChuaToiDa_TextChanged);
             this.txtBoxSoXeSuaChuaToiDa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBoxSoXeSuaChuaToiDa_KeyPress);
             // 
             // panel14
@@ -681,6 +686,7 @@
             this.txtBoxSoHieuXe.Name = "txtBoxSoHieuXe";
             this.txtBoxSoHieuXe.Size = new System.Drawing.Size(224, 30);
             this.txtBoxSoHieuXe.TabIndex = 1;
+            this.txtBoxSoHieuXe.TextChanged += new System.EventHandler(this.txtBoxSoHieuXe_TextChanged);
             this.txtBoxSoHieuXe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBoxSoHieuXe_KeyPress);
             // 
             // tPBaoCao
@@ -1047,14 +1053,14 @@
             // lblDanhSachTiepNhan
             // 
             this.lblDanhSachTiepNhan.BackColor = System.Drawing.Color.Transparent;
-            this.lblDanhSachTiepNhan.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblDanhSachTiepNhan.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblDanhSachTiepNhan.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblDanhSachTiepNhan.Location = new System.Drawing.Point(95, 18);
+            this.lblDanhSachTiepNhan.Location = new System.Drawing.Point(32, 18);
             this.lblDanhSachTiepNhan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDanhSachTiepNhan.Name = "lblDanhSachTiepNhan";
-            this.lblDanhSachTiepNhan.Size = new System.Drawing.Size(395, 31);
+            this.lblDanhSachTiepNhan.Size = new System.Drawing.Size(537, 31);
             this.lblDanhSachTiepNhan.TabIndex = 6;
-            this.lblDanhSachTiepNhan.Text = "DANH SÁCH XE ĐÃ TIẾP NHẬN\r\n\r\n";
+            this.lblDanhSachTiepNhan.Text = "DANH SÁCH XE ĐÃ TIẾP NHẬN TRONG NGÀY";
             this.lblDanhSachTiepNhan.Click += new System.EventHandler(this.lblDanhSachTiepNhan_Click);
             // 
             // dataGridViewXeDaTiepNhan
@@ -1131,7 +1137,7 @@
             // labelTieuDe
             // 
             this.labelTieuDe.BackColor = System.Drawing.Color.Transparent;
-            this.labelTieuDe.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelTieuDe.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelTieuDe.ForeColor = System.Drawing.SystemColors.ControlText;
             this.labelTieuDe.Location = new System.Drawing.Point(17, 17);
             this.labelTieuDe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -1437,6 +1443,7 @@
             this.textBoxSoLuongVTPTPhieuSuaChua.Name = "textBoxSoLuongVTPTPhieuSuaChua";
             this.textBoxSoLuongVTPTPhieuSuaChua.Size = new System.Drawing.Size(84, 30);
             this.textBoxSoLuongVTPTPhieuSuaChua.TabIndex = 7;
+            this.textBoxSoLuongVTPTPhieuSuaChua.TextChanged += new System.EventHandler(this.textBoxSoLuongVTPTPhieuSuaChua_TextChanged);
             this.textBoxSoLuongVTPTPhieuSuaChua.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxSoLuongVTPTPhieuSuaChua_KeyPress);
             // 
             // labelSoLuongPhieuSuaChua
@@ -1655,6 +1662,7 @@
             this.comboBoxBienSoXe1.Size = new System.Drawing.Size(169, 30);
             this.comboBoxBienSoXe1.TabIndex = 1;
             this.comboBoxBienSoXe1.ValueMember = "BienSo";
+            this.comboBoxBienSoXe1.SelectedIndexChanged += new System.EventHandler(this.comboBoxBienSoXe1_SelectedIndexChanged);
             // 
             // xEBindingSource
             // 
@@ -2027,7 +2035,11 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaPhuTung,
-            this.TenVatTuPhuTung});
+            this.TenVatTuPhuTung,
+            this.maPhuTungDataGridViewTextBoxColumn1,
+            this.tenVatTuPhuTungDataGridViewTextBoxColumn,
+            this.soLuongDataGridViewTextBoxColumn1,
+            this.donGiaDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.kHOBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(66, 4);
             this.dataGridView1.Name = "dataGridView1";
@@ -2036,6 +2048,24 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(323, 382);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // MaPhuTung
+            // 
+            this.MaPhuTung.DataPropertyName = "MaPhuTung";
+            this.MaPhuTung.HeaderText = "Mã VTPT";
+            this.MaPhuTung.MinimumWidth = 6;
+            this.MaPhuTung.Name = "MaPhuTung";
+            this.MaPhuTung.ReadOnly = true;
+            this.MaPhuTung.Width = 125;
+            // 
+            // TenVatTuPhuTung
+            // 
+            this.TenVatTuPhuTung.DataPropertyName = "TenVatTuPhuTung";
+            this.TenVatTuPhuTung.HeaderText = "Tên VTPT";
+            this.TenVatTuPhuTung.MinimumWidth = 6;
+            this.TenVatTuPhuTung.Name = "TenVatTuPhuTung";
+            this.TenVatTuPhuTung.ReadOnly = true;
+            this.TenVatTuPhuTung.Width = 125;
             // 
             // panel28
             // 
@@ -2987,23 +3017,41 @@
             // 
             this.pHIEUTHUTIENTableAdapter.ClearBeforeFill = true;
             // 
-            // MaPhuTung
+            // maPhuTungDataGridViewTextBoxColumn1
             // 
-            this.MaPhuTung.DataPropertyName = "MaPhuTung";
-            this.MaPhuTung.HeaderText = "Mã VTPT";
-            this.MaPhuTung.MinimumWidth = 6;
-            this.MaPhuTung.Name = "MaPhuTung";
-            this.MaPhuTung.ReadOnly = true;
-            this.MaPhuTung.Width = 125;
+            this.maPhuTungDataGridViewTextBoxColumn1.DataPropertyName = "MaPhuTung";
+            this.maPhuTungDataGridViewTextBoxColumn1.HeaderText = "MaPhuTung";
+            this.maPhuTungDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.maPhuTungDataGridViewTextBoxColumn1.Name = "maPhuTungDataGridViewTextBoxColumn1";
+            this.maPhuTungDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.maPhuTungDataGridViewTextBoxColumn1.Width = 125;
             // 
-            // TenVatTuPhuTung
+            // tenVatTuPhuTungDataGridViewTextBoxColumn
             // 
-            this.TenVatTuPhuTung.DataPropertyName = "TenVatTuPhuTung";
-            this.TenVatTuPhuTung.HeaderText = "Tên VTPT";
-            this.TenVatTuPhuTung.MinimumWidth = 6;
-            this.TenVatTuPhuTung.Name = "TenVatTuPhuTung";
-            this.TenVatTuPhuTung.ReadOnly = true;
-            this.TenVatTuPhuTung.Width = 125;
+            this.tenVatTuPhuTungDataGridViewTextBoxColumn.DataPropertyName = "TenVatTuPhuTung";
+            this.tenVatTuPhuTungDataGridViewTextBoxColumn.HeaderText = "TenVatTuPhuTung";
+            this.tenVatTuPhuTungDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenVatTuPhuTungDataGridViewTextBoxColumn.Name = "tenVatTuPhuTungDataGridViewTextBoxColumn";
+            this.tenVatTuPhuTungDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tenVatTuPhuTungDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // soLuongDataGridViewTextBoxColumn1
+            // 
+            this.soLuongDataGridViewTextBoxColumn1.DataPropertyName = "SoLuong";
+            this.soLuongDataGridViewTextBoxColumn1.HeaderText = "SoLuong";
+            this.soLuongDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.soLuongDataGridViewTextBoxColumn1.Name = "soLuongDataGridViewTextBoxColumn1";
+            this.soLuongDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.soLuongDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // donGiaDataGridViewTextBoxColumn
+            // 
+            this.donGiaDataGridViewTextBoxColumn.DataPropertyName = "DonGia";
+            this.donGiaDataGridViewTextBoxColumn.HeaderText = "DonGia";
+            this.donGiaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.donGiaDataGridViewTextBoxColumn.Name = "donGiaDataGridViewTextBoxColumn";
+            this.donGiaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.donGiaDataGridViewTextBoxColumn.Width = 125;
             // 
             // frmMain
             // 
@@ -3416,5 +3464,9 @@
         private System.Windows.Forms.Button btnPTT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPhuTung;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenVatTuPhuTung;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maPhuTungDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenVatTuPhuTungDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soLuongDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donGiaDataGridViewTextBoxColumn;
     }
 }

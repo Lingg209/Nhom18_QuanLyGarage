@@ -87,8 +87,10 @@ namespace DAO
             int ma = int.Parse(dt.Rows[0][0].ToString());
             dt = DataProvider.Instance.ExecuteQuery("Select MaKH from XE where BienSo = '" + BienSo + "'");
             string makh = dt.Rows[0][0].ToString();
-            string query = "insert into PHIEUSUACHUA values (" + ma + " , '" + BienSo + "' , " + makh + " , " + TienCong + " , " + TienPhuTung + " , " + TongTien + ")";
+            string query = "UPDATE XE SET TrangThai = 1 WHERE BienSo = '" + BienSo + "'";
             int re = DataProvider.Instance.ExecuteNonQuery(query);
+            query = "insert into PHIEUSUACHUA values (" + ma + " , '" + BienSo + "' , " + makh + " , " + TienCong + " , " + TienPhuTung + " , " + TongTien + ")";
+            re = DataProvider.Instance.ExecuteNonQuery(query);
             int slvtpt = VTPT.Rows.Count;
             int sltc = TC.Rows.Count;
             if (slvtpt >= sltc)

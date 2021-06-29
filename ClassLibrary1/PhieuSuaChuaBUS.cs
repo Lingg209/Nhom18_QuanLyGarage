@@ -74,7 +74,7 @@ namespace BUS
 
         public void LuuPhieuSuaChua(string BienSo, int TienCong, int TienPhuTung, int TongTien, DataTable TC, DataTable VTPT)//Lưu dữ liệu được nhập vào 2 bảng PHIEUSUACHUA và CHITIETPHIEUSUACHUA
         {
-            DAO.PhieuSuaChuaDAO.Instance.LuuPhieuSuaChua(BienSo, TienCong, TienCong, TongTien, TC, VTPT);
+            DAO.PhieuSuaChuaDAO.Instance.LuuPhieuSuaChua(BienSo, TienCong, TienPhuTung, TongTien, TC, VTPT);
 
         }
 
