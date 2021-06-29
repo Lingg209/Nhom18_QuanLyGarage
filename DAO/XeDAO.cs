@@ -54,6 +54,8 @@ namespace DAO
             string query = "TimKiemChinhXac @BienSo , @HieuXe";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { BienSo, HieuXe });
         }
+
+
         public int ThemXe(string BienSo, string HieuXe, int MaKH, DateTime now)
         {
             string query = "ThemXe @BienSo , @HieuXe , @MaKH , @NgayTiepNhan";

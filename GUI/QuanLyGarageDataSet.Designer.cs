@@ -70,15 +70,15 @@ namespace GUI {
         
         private global::System.Data.DataRelation relationFK__CHITIETPHI__MaTC__656C112C;
         
-        private global::System.Data.DataRelation relationFK__PHIEUSUAC__BienS__6754599E;
-        
-        private global::System.Data.DataRelation relationFK__XE__MaKH__6B24EA82;
-        
-        private global::System.Data.DataRelation relationFK__XE__MaHX__6A30C649;
-        
         private global::System.Data.DataRelation relationFK__CT_DOANHSO__MaHX__6C190EBB;
         
         private global::System.Data.DataRelation relationFK__CT_DOANHSO__MaDS__6D0D32F4;
+        
+        private global::System.Data.DataRelation relationFK__XE__MaHX__6A30C649;
+        
+        private global::System.Data.DataRelation relationFK__XE__MaKH__6B24EA82;
+        
+        private global::System.Data.DataRelation relationFK__PHIEUSUAC__BienS__6754599E;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -564,11 +564,11 @@ namespace GUI {
             this.relationFK__CHITIETPH__MaPhi__6383C8BA = this.Relations["FK__CHITIETPH__MaPhi__6383C8BA"];
             this.relationFK__CHITIETPH__MaPhu__6477ECF3 = this.Relations["FK__CHITIETPH__MaPhu__6477ECF3"];
             this.relationFK__CHITIETPHI__MaTC__656C112C = this.Relations["FK__CHITIETPHI__MaTC__656C112C"];
-            this.relationFK__PHIEUSUAC__BienS__6754599E = this.Relations["FK__PHIEUSUAC__BienS__6754599E"];
-            this.relationFK__XE__MaKH__6B24EA82 = this.Relations["FK__XE__MaKH__6B24EA82"];
-            this.relationFK__XE__MaHX__6A30C649 = this.Relations["FK__XE__MaHX__6A30C649"];
             this.relationFK__CT_DOANHSO__MaHX__6C190EBB = this.Relations["FK__CT_DOANHSO__MaHX__6C190EBB"];
             this.relationFK__CT_DOANHSO__MaDS__6D0D32F4 = this.Relations["FK__CT_DOANHSO__MaDS__6D0D32F4"];
+            this.relationFK__XE__MaHX__6A30C649 = this.Relations["FK__XE__MaHX__6A30C649"];
+            this.relationFK__XE__MaKH__6B24EA82 = this.Relations["FK__XE__MaKH__6B24EA82"];
+            this.relationFK__PHIEUSUAC__BienS__6754599E = this.Relations["FK__PHIEUSUAC__BienS__6754599E"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -641,18 +641,6 @@ namespace GUI {
                         this.tableTIENCONG.MaTCColumn}, new global::System.Data.DataColumn[] {
                         this.tableCHITIETPHIEUSUACHUA.MaTCColumn}, false);
             this.Relations.Add(this.relationFK__CHITIETPHI__MaTC__656C112C);
-            this.relationFK__PHIEUSUAC__BienS__6754599E = new global::System.Data.DataRelation("FK__PHIEUSUAC__BienS__6754599E", new global::System.Data.DataColumn[] {
-                        this.tableXE.BienSoColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePHIEUSUACHUA.BienSoColumn}, false);
-            this.Relations.Add(this.relationFK__PHIEUSUAC__BienS__6754599E);
-            this.relationFK__XE__MaKH__6B24EA82 = new global::System.Data.DataRelation("FK__XE__MaKH__6B24EA82", new global::System.Data.DataColumn[] {
-                        this.tableKHACHHANG.MaKHColumn}, new global::System.Data.DataColumn[] {
-                        this.tableXE.MaKHColumn}, false);
-            this.Relations.Add(this.relationFK__XE__MaKH__6B24EA82);
-            this.relationFK__XE__MaHX__6A30C649 = new global::System.Data.DataRelation("FK__XE__MaHX__6A30C649", new global::System.Data.DataColumn[] {
-                        this.tableHIEUXE.MaHXColumn}, new global::System.Data.DataColumn[] {
-                        this.tableXE.MaHXColumn}, false);
-            this.Relations.Add(this.relationFK__XE__MaHX__6A30C649);
             this.relationFK__CT_DOANHSO__MaHX__6C190EBB = new global::System.Data.DataRelation("FK__CT_DOANHSO__MaHX__6C190EBB", new global::System.Data.DataColumn[] {
                         this.tableHIEUXE.MaHXColumn}, new global::System.Data.DataColumn[] {
                         this.tableCT_DOANHSO.MaHXColumn}, false);
@@ -661,6 +649,18 @@ namespace GUI {
                         this.tableDOANHSO.MaDSColumn}, new global::System.Data.DataColumn[] {
                         this.tableCT_DOANHSO.MaDSColumn}, false);
             this.Relations.Add(this.relationFK__CT_DOANHSO__MaDS__6D0D32F4);
+            this.relationFK__XE__MaHX__6A30C649 = new global::System.Data.DataRelation("FK__XE__MaHX__6A30C649", new global::System.Data.DataColumn[] {
+                        this.tableHIEUXE.MaHXColumn}, new global::System.Data.DataColumn[] {
+                        this.tableXE.MaHXColumn}, false);
+            this.Relations.Add(this.relationFK__XE__MaHX__6A30C649);
+            this.relationFK__XE__MaKH__6B24EA82 = new global::System.Data.DataRelation("FK__XE__MaKH__6B24EA82", new global::System.Data.DataColumn[] {
+                        this.tableKHACHHANG.MaKHColumn}, new global::System.Data.DataColumn[] {
+                        this.tableXE.MaKHColumn}, false);
+            this.Relations.Add(this.relationFK__XE__MaKH__6B24EA82);
+            this.relationFK__PHIEUSUAC__BienS__6754599E = new global::System.Data.DataRelation("FK__PHIEUSUAC__BienS__6754599E", new global::System.Data.DataColumn[] {
+                        this.tableXE.BienSoColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePHIEUSUACHUA.BienSoColumn}, false);
+            this.Relations.Add(this.relationFK__PHIEUSUAC__BienS__6754599E);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6940,23 +6940,23 @@ namespace GUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public KHACHHANGRow KHACHHANGRow {
-                get {
-                    return ((KHACHHANGRow)(this.GetParentRow(this.Table.ParentRelations["FK__XE__MaKH__6B24EA82"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__XE__MaKH__6B24EA82"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public HIEUXERow HIEUXERow {
                 get {
                     return ((HIEUXERow)(this.GetParentRow(this.Table.ParentRelations["FK__XE__MaHX__6A30C649"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__XE__MaHX__6A30C649"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public KHACHHANGRow KHACHHANGRow {
+                get {
+                    return ((KHACHHANGRow)(this.GetParentRow(this.Table.ParentRelations["FK__XE__MaKH__6B24EA82"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__XE__MaKH__6B24EA82"]);
                 }
             }
             
@@ -7075,23 +7075,23 @@ namespace GUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public XERow[] GetXERows() {
-                if ((this.Table.ChildRelations["FK__XE__MaHX__6A30C649"] == null)) {
-                    return new XERow[0];
-                }
-                else {
-                    return ((XERow[])(base.GetChildRows(this.Table.ChildRelations["FK__XE__MaHX__6A30C649"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public CT_DOANHSORow[] GetCT_DOANHSORows() {
                 if ((this.Table.ChildRelations["FK__CT_DOANHSO__MaHX__6C190EBB"] == null)) {
                     return new CT_DOANHSORow[0];
                 }
                 else {
                     return ((CT_DOANHSORow[])(base.GetChildRows(this.Table.ChildRelations["FK__CT_DOANHSO__MaHX__6C190EBB"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public XERow[] GetXERows() {
+                if ((this.Table.ChildRelations["FK__XE__MaHX__6A30C649"] == null)) {
+                    return new XERow[0];
+                }
+                else {
+                    return ((XERow[])(base.GetChildRows(this.Table.ChildRelations["FK__XE__MaHX__6A30C649"])));
                 }
             }
         }

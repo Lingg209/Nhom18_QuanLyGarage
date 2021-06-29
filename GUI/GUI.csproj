@@ -82,6 +82,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyGarageDataSet.cs">
+      <DependentUpon>QuanLyGarageDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyGarageDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

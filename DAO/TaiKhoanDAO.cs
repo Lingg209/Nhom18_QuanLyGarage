@@ -46,8 +46,8 @@ namespace DAO
 
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { User, Pass });
 
-            string qh = result.Rows[0][1].ToString();
-            return qh;
+            string ht = result.Rows[0][1].ToString();
+            return ht;
         }
 
         public int LayMaTaiKhoan(string User, string Pass)

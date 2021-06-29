@@ -52,6 +52,7 @@ namespace BUS
             return XeDAO.Instance.TimKiemChinhXac(BienSo, HieuXe);
         }
 
+      
         public int ThemXe(string BienSo, string HieuXe, int MaKH, DateTime Now)
         {
             return XeDAO.Instance.ThemXe(BienSo, HieuXe, MaKH, Now);

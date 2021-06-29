@@ -312,7 +312,7 @@ namespace GUI
                 MessageBox.Show("Vui lòng nhập lại tên khách hàng!");
             else
             {
-                if (txtBoxDienThoai.Text.Length < 10 & txtBoxDienThoai.Text.Length == 0)
+                if (txtBoxDienThoai.Text.Length < 10)
                     MessageBox.Show("Vui lòng nhập lại số điện thoại của khách hàng!");
                 else
                 {
@@ -321,14 +321,17 @@ namespace GUI
                     else
                     {
                         if (txtBoxBienSo.Text.Length == 0)
-                            MessageBox.Show("Vui lòng nhập lại biển số xe !");
+                            MessageBox.Show("Vui lòng nhập lại biển số xe !");                     
                         else
                         {
                             int test = 0;
                             test = KhachHangBUS.Instance.ThemKhachHang(txtBoxTenKH.Text, txtBoxDienThoai.Text, txtBoxDiaChi.Text);      //thuc hien them khach hang moi
                             test = XeBUS.Instance.ThemXe(txtBoxBienSo.Text, comBoxHieuXe.SelectedValue.ToString(), KhachHangBUS.Instance.LayMaKH(txtBoxTenKH.Text, txtBoxDienThoai.Text), now);
-                            if (test != 0)
+                            if (test == 0)
                             {
+                                MessageBox.Show("Thêm xe  k thành công!");
+                            }
+                            else {
                                 MessageBox.Show("Thêm xe thành công!");
                                 progressBarSoXeDaThem.Value = progressBarSoXeDaThem.Value + 1;
                                 this.xETableAdapter.Fill(this.quanLyGarageDataSet.XE);
@@ -375,6 +378,11 @@ namespace GUI
 
         private void buttonLapPhieuThuTienPTT_Click(object sender, EventArgs e)
         {
+            if(textBoxHoTenChuXePTT.Text == null || textBoxHoTenChuXePTT.Text.Length == 0)
+            {
+                MessageBox.Show("Vui lòng chọn biển số!");
+            }
+            else
             if (textBoxSoTienThuPTT.Text != "" & textBoxSoTienThuPTT.Text != "0")
             {
                 if (PhieuThuTienBUS.Instance.LayTienNoKH(comboBienSoXe2.Text) < int.Parse(textBoxSoTienThuPTT.Text))
@@ -416,6 +424,9 @@ namespace GUI
         private void buttonTaoMoiVTPT_Click(object sender, EventArgs e) //chỗ này thiếu thêm thời gian, để tối về anh kiểm tra thử database có thêm chưa, nếu chưa thêm thì anh gởi lệnh SQL qua và sửa vào trong này
         {
             DateTime now = DateTime.Now;
+            if (textBoxTenVTPTMoi.Text == "0" || textBoxTenVTPTMoi.Text.Length == 0)
+            { MessageBox.Show("Vui lòng nhập Tên vật tư trước khi thêm  vật tư vào kho !"); }
+            else
             if (textBoxSoLuongVTPT.Text == "0" || textBoxSoLuongVTPT.Text.Length == 0)
             { MessageBox.Show("Vui lòng nhập số lượng vật tư trước khi thêm  vật tư vào kho !"); }
             else
@@ -824,6 +835,44 @@ namespace GUI
         private void comboBoxBienSoXe1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void tàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBoxDienThoai_KeyPress(object sender, KeyPressEventArgs e)
+        {  // Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+
+            }
+        }
+
+        private void textBoxSoTienThuPTT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxSoLuongVTPT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxGiaVTPT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

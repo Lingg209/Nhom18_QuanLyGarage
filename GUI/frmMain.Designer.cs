@@ -111,7 +111,6 @@
             this.txtBoxDiaChi = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblDienThoai = new System.Windows.Forms.Label();
-            this.txtBoxDienThoai = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.labelTenKhachHang = new System.Windows.Forms.Label();
             this.txtBoxTenKH = new System.Windows.Forms.TextBox();
@@ -179,8 +178,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.MaPhuTung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenVatTuPhuTung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel28 = new System.Windows.Forms.Panel();
             this.panel32 = new System.Windows.Forms.Panel();
             this.labelGiaVTPT = new System.Windows.Forms.Label();
@@ -276,6 +273,9 @@
             this.pHIEUNHAPVTPTTableAdapter = new GUI.QuanLyGarageDataSetTableAdapters.PHIEUNHAPVTPTTableAdapter();
             this.pHIEUSUACHUATableAdapter = new GUI.QuanLyGarageDataSetTableAdapters.PHIEUSUACHUATableAdapter();
             this.pHIEUTHUTIENTableAdapter = new GUI.QuanLyGarageDataSetTableAdapters.PHIEUTHUTIENTableAdapter();
+            this.MaPhuTung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenVatTuPhuTung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtBoxDienThoai = new System.Windows.Forms.TextBox();
             this.maPhuTungDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenVatTuPhuTungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soLuongDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -403,6 +403,7 @@
             this.tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
             this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(102, 26);
             this.tàiKhoảnToolStripMenuItem.Text = "Tài khoản";
+            this.tàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.tàiKhoảnToolStripMenuItem_Click);
             // 
             // thôngTinTàiKhoảnToolStripMenuItem
             // 
@@ -1274,16 +1275,6 @@
             this.lblDienThoai.TabIndex = 2;
             this.lblDienThoai.Text = "Điện thoại:";
             // 
-            // txtBoxDienThoai
-            // 
-            this.txtBoxDienThoai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxDienThoai.Location = new System.Drawing.Point(164, 5);
-            this.txtBoxDienThoai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtBoxDienThoai.MaxLength = 10;
-            this.txtBoxDienThoai.Name = "txtBoxDienThoai";
-            this.txtBoxDienThoai.Size = new System.Drawing.Size(302, 30);
-            this.txtBoxDienThoai.TabIndex = 2;
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.labelTenKhachHang);
@@ -1965,6 +1956,7 @@
             this.textBoxSoTienThuPTT.Name = "textBoxSoTienThuPTT";
             this.textBoxSoTienThuPTT.Size = new System.Drawing.Size(383, 30);
             this.textBoxSoTienThuPTT.TabIndex = 2;
+            this.textBoxSoTienThuPTT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSoTienThuPTT_KeyPress);
             // 
             // panel22
             // 
@@ -2049,24 +2041,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(323, 382);
             this.dataGridView1.TabIndex = 0;
             // 
-            // MaPhuTung
-            // 
-            this.MaPhuTung.DataPropertyName = "MaPhuTung";
-            this.MaPhuTung.HeaderText = "Mã VTPT";
-            this.MaPhuTung.MinimumWidth = 6;
-            this.MaPhuTung.Name = "MaPhuTung";
-            this.MaPhuTung.ReadOnly = true;
-            this.MaPhuTung.Width = 125;
-            // 
-            // TenVatTuPhuTung
-            // 
-            this.TenVatTuPhuTung.DataPropertyName = "TenVatTuPhuTung";
-            this.TenVatTuPhuTung.HeaderText = "Tên VTPT";
-            this.TenVatTuPhuTung.MinimumWidth = 6;
-            this.TenVatTuPhuTung.Name = "TenVatTuPhuTung";
-            this.TenVatTuPhuTung.ReadOnly = true;
-            this.TenVatTuPhuTung.Width = 125;
-            // 
             // panel28
             // 
             this.panel28.Controls.Add(this.panel32);
@@ -2109,6 +2083,7 @@
             this.textBoxGiaVTPT.Size = new System.Drawing.Size(337, 30);
             this.textBoxGiaVTPT.TabIndex = 4;
             this.textBoxGiaVTPT.TextChanged += new System.EventHandler(this.TextBoxGiaVTPT_TextChanged);
+            this.textBoxGiaVTPT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxGiaVTPT_KeyPress);
             // 
             // panel31
             // 
@@ -2172,6 +2147,7 @@
             this.textBoxSoLuongVTPT.Name = "textBoxSoLuongVTPT";
             this.textBoxSoLuongVTPT.Size = new System.Drawing.Size(337, 30);
             this.textBoxSoLuongVTPT.TabIndex = 2;
+            this.textBoxSoLuongVTPT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSoLuongVTPT_KeyPress);
             // 
             // panel29
             // 
@@ -3017,6 +2993,35 @@
             // 
             this.pHIEUTHUTIENTableAdapter.ClearBeforeFill = true;
             // 
+            // MaPhuTung
+            // 
+            this.MaPhuTung.DataPropertyName = "MaPhuTung";
+            this.MaPhuTung.HeaderText = "Mã VTPT";
+            this.MaPhuTung.MinimumWidth = 6;
+            this.MaPhuTung.Name = "MaPhuTung";
+            this.MaPhuTung.ReadOnly = true;
+            this.MaPhuTung.Width = 125;
+            // 
+            // TenVatTuPhuTung
+            // 
+            this.TenVatTuPhuTung.DataPropertyName = "TenVatTuPhuTung";
+            this.TenVatTuPhuTung.HeaderText = "Tên VTPT";
+            this.TenVatTuPhuTung.MinimumWidth = 6;
+            this.TenVatTuPhuTung.Name = "TenVatTuPhuTung";
+            this.TenVatTuPhuTung.ReadOnly = true;
+            this.TenVatTuPhuTung.Width = 125;
+            // 
+            // txtBoxDienThoai
+            // 
+            this.txtBoxDienThoai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxDienThoai.Location = new System.Drawing.Point(164, 5);
+            this.txtBoxDienThoai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBoxDienThoai.MaxLength = 10;
+            this.txtBoxDienThoai.Name = "txtBoxDienThoai";
+            this.txtBoxDienThoai.Size = new System.Drawing.Size(302, 30);
+            this.txtBoxDienThoai.TabIndex = 2;
+            this.txtBoxDienThoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxDienThoai_KeyPress);
+            // 
             // maPhuTungDataGridViewTextBoxColumn1
             // 
             this.maPhuTungDataGridViewTextBoxColumn1.DataPropertyName = "MaPhuTung";
@@ -3068,7 +3073,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quản lý garage";
+            this.Text = "Quản lý Garage ";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.menuStripCongCu.ResumeLayout(false);
@@ -3293,7 +3298,6 @@
         private System.Windows.Forms.TextBox txtBoxDiaChi;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblDienThoai;
-        private System.Windows.Forms.TextBox txtBoxDienThoai;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label labelTenKhachHang;
         private System.Windows.Forms.TextBox txtBoxTenKH;
@@ -3464,6 +3468,7 @@
         private System.Windows.Forms.Button btnPTT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPhuTung;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenVatTuPhuTung;
+        private System.Windows.Forms.TextBox txtBoxDienThoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn maPhuTungDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenVatTuPhuTungDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn soLuongDataGridViewTextBoxColumn1;
