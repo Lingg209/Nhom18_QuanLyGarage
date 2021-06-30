@@ -235,17 +235,17 @@ namespace GUI
             else
             {
                 int userVal = int.Parse(textBoxThangBaoCao.Text);
-                int userValMonth = int.Parse(textBoxNamBaoCao.Text);
+                int userValYear = int.Parse(textBoxNamBaoCao.Text);
                 if (userVal < 1 || userVal > 12)
                 {
                     MessageBox.Show("Vui lòng nhập lại tháng!");
                 }
                 else
-                if (userValMonth > 6 && userValMonth == 2021)
+                if (userVal > 7 && userValYear == 2021)
                 {
                     MessageBox.Show("Vui lòng nhập lại thời gian!");
                 }
-                else if (userValMonth < 1 || userValMonth > 2021)
+                else if (userValYear < 1 || userValYear > 2021)
                 {
                     MessageBox.Show("Vui lòng nhập lại năm!");
                 }
@@ -313,7 +313,7 @@ namespace GUI
 
         private void ButtonPhieuNhapVTPTMoi_Click(object sender, EventArgs e)
         {
-            textBoxTenVTPTMoi.Clear();
+            comboBoxTenVTPT.Text="";
             textBoxSoLuongVTPT.Clear();
             textBoxGiaVTPT.Clear();
             textBoxTenVTPTMoi.Enabled = true;
@@ -435,30 +435,6 @@ namespace GUI
             }
         }
 
-        private void buttonTaoMoiVTPT_Click(object sender, EventArgs e) //chỗ này thiếu thêm thời gian, để tối về anh kiểm tra thử database có thêm chưa, nếu chưa thêm thì anh gởi lệnh SQL qua và sửa vào trong này
-        {
-            DateTime now = DateTime.Now;
-            if (textBoxTenVTPTMoi.Text == "0" || textBoxTenVTPTMoi.Text.Length == 0)
-            { MessageBox.Show("Vui lòng nhập Tên vật tư trước khi thêm  vật tư vào kho !"); }
-            else
-            if (textBoxSoLuongVTPT.Text == "0" || textBoxSoLuongVTPT.Text.Length == 0)
-            { MessageBox.Show("Vui lòng nhập số lượng vật tư trước khi thêm  vật tư vào kho !"); }
-            else
-            {
-                if (textBoxGiaVTPT.Text == "0" || textBoxGiaVTPT.Text.Length == 0)
-                { MessageBox.Show("Vui lòng nhập Giá vật tư trước khi thêm mới vật tư vào kho !"); }
-                else
-                {
-                    int test = 0;
-                    test = PhieuNhapVTPTBUS.Instance.NhapMoiVTPT(textBoxTenVTPTMoi.Text, textBoxSoLuongVTPT.Text, textBoxGiaVTPT.Text, now);
-                    if (test > 0)
-                    {
-                        MessageBox.Show("Nhập mới vật tư phụ tùng thành công");
-                        this.kHOTableAdapter.Fill(this.quanLyGarageDataSet.KHO);
-                    }
-                }
-            }
-        }
 
         private void btnTimKiemTraCuu_Click(object sender, EventArgs e)
         {
@@ -597,7 +573,7 @@ namespace GUI
         {
             if (btnHoanTatClicked)
             {
-                PhieuSuaChuaBUS.Instance.LuuPhieuSuaChua(comboBoxBienSoXe1.Text, TinhTongChiPhi(), TinhTongThanhTien(), TinhTongThanhTien() + TinhTongChiPhi(), (DataTable)dataGridViewTienCongPhieuSuaChua.DataSource, (DataTable)dataGridViewVTPTPhieuSuaChua.DataSource);
+                PhieuSuaChuaBUS.Instance.LuuPhieuSuaChua(comboBoxBienSoXe1.Text, TinhTongChiPhi(), TinhTongThanhTien(), TinhTongThanhTien() + TinhTongChiPhi(),(DataTable)dataGridViewTienCongPhieuSuaChua.DataSource, (DataTable)dataGridViewVTPTPhieuSuaChua.DataSource);
                 PhieuSuaChuaBUS.Instance.CapNhatTienNo(comboBoxBienSoXe1.Text, int.Parse(textBoxTongTienPhieuSuaChua.Text));
                 MessageBox.Show("Đã lưu phiếu sửa chữa!", "Thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 PhieuSuaChuaBUS.Instance.NhapVTPT((DataTable)dataGridViewVTPTPhieuSuaChua.DataSource);
@@ -848,6 +824,44 @@ namespace GUI
         private void tPTiepNhan_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void button_phieunhapmoivtpt_Click(object sender, EventArgs e)
+        {
+            textBoxTenVTPTMoi.Clear();
+            textBoxSoLuongmoi.Clear();
+            textBoxGiaVTPT.Clear();
+        }
+
+        
+        private void buttonTaoMoiVTPT_Click_1(object sender, EventArgs e)
+        {
+            DateTime now = DateTime.Now;
+            if (textBoxTenVTPTMoi.Text == "0" || textBoxTenVTPTMoi.Text.Length == 0)
+            { MessageBox.Show("Vui lòng nhập Tên vật tư trước khi thêm  vật tư vào kho !"); }
+            else
+            if (textBoxSoLuongmoi.Text == "0" || textBoxSoLuongmoi.Text.Length == 0)
+            { MessageBox.Show("Vui lòng nhập số lượng vật tư trước khi thêm  vật tư vào kho !"); }
+            else
+            {
+                if (textBoxGiaVTPT.Text == "0" || textBoxGiaVTPT.Text.Length == 0)
+                { MessageBox.Show("Vui lòng nhập Giá vật tư trước khi thêm mới vật tư vào kho !"); }
+                else
+                {
+                    int test = 0;
+                    test = PhieuNhapVTPTBUS.Instance.NhapMoiVTPT(textBoxTenVTPTMoi.Text, textBoxSoLuongmoi.Text, textBoxGiaVTPT.Text, now);
+                    if (test > 0)
+                    {
+                        MessageBox.Show("Nhập mới vật tư phụ tùng thành công");
+                        this.kHOTableAdapter.Fill(this.quanLyGarageDataSet.KHO);
+                    }
+                }
+            }
+        }
+
+        private void txtBoxNgaySuaChua_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
