@@ -230,9 +230,28 @@ namespace GUI
 
         private void BtnLapBaoCaoDoanhSo_Click(object sender, EventArgs e)
         {
-            dataGridViewBaoCaoDoanhSo.DataSource = BaoCaoDoanhThuBUS.Instance.BaoCaoDoanhThu(textBoxThangBaoCao.Text, textBoxNamBaoCao.Text);
-            dataGridViewBaoCaoDoanhSo.Show();
-            textBoxTongDoanhThu.Text = BaoCaoDoanhThuBUS.Instance.TongTienDoanhThu(textBoxThangBaoCao.Text, textBoxNamBaoCao.Text);
+            int userVal = int.Parse(textBoxThangBaoCao.Text);
+            int userValMonth = int.Parse(textBoxNamBaoCao.Text);
+            if (textBoxThangBaoCao.Text.Length == 0 || textBoxNamBaoCao.Text.Length == 0)
+                MessageBox.Show("Vui lòng nhập đủ thời gian báo cáo!");
+            else
+            {
+                if (userVal < 1 || userVal > 12)
+                {
+                    MessageBox.Show("Vui lòng nhập lại tháng!");
+                }
+                else
+                if (userValMonth < 1)
+                {
+                    MessageBox.Show("Vui lòng nhập lại năm!");
+                }
+                else
+                {
+                    dataGridViewBaoCaoDoanhSo.DataSource = BaoCaoDoanhThuBUS.Instance.BaoCaoDoanhThu(textBoxThangBaoCao.Text, textBoxNamBaoCao.Text);
+                    dataGridViewBaoCaoDoanhSo.Show();
+                    textBoxTongDoanhThu.Text = BaoCaoDoanhThuBUS.Instance.TongTienDoanhThu(textBoxThangBaoCao.Text, textBoxNamBaoCao.Text);
+                }
+            }
         }
 
         private void BtnLapBaoCaoTon_Click(object sender, EventArgs e)
