@@ -229,19 +229,23 @@ namespace GUI
         }
 
         private void BtnLapBaoCaoDoanhSo_Click(object sender, EventArgs e)
-        {
-            int userVal = int.Parse(textBoxThangBaoCao.Text);
-            int userValMonth = int.Parse(textBoxNamBaoCao.Text);
+        {            
             if (textBoxThangBaoCao.Text.Length == 0 || textBoxNamBaoCao.Text.Length == 0)
                 MessageBox.Show("Vui lòng nhập đủ thời gian báo cáo!");
             else
             {
+                int userVal = int.Parse(textBoxThangBaoCao.Text);
+                int userValMonth = int.Parse(textBoxNamBaoCao.Text);
                 if (userVal < 1 || userVal > 12)
                 {
                     MessageBox.Show("Vui lòng nhập lại tháng!");
                 }
                 else
-                if (userValMonth < 1)
+                if (userValMonth > 6 && userValMonth == 2021)
+                {
+                    MessageBox.Show("Vui lòng nhập lại thời gian!");
+                }
+                else if (userValMonth < 1 || userValMonth > 2021)
                 {
                     MessageBox.Show("Vui lòng nhập lại năm!");
                 }
@@ -327,6 +331,11 @@ namespace GUI
 
         private void buttonThemXe_Click(object sender, EventArgs e)
         {
+            if (progressBarSoXeDaThem.Value == progressBarSoXeDaThem.Maximum)
+            {
+                MessageBox.Show("Không thể tiếp nhận thêm! Số xe tiếp nhận trong ngày đã tối đa");
+            }
+            else
             if (txtBoxTenKH.Text.Length == 0)
                 MessageBox.Show("Vui lòng nhập lại tên khách hàng!");
             else
@@ -340,7 +349,7 @@ namespace GUI
                     else
                     {
                         if (txtBoxBienSo.Text.Length == 0)
-                            MessageBox.Show("Vui lòng nhập lại biển số xe !");                     
+                            MessageBox.Show("Vui lòng nhập lại biển số xe !");
                         else
                         {
                             int test = 0;
@@ -348,28 +357,14 @@ namespace GUI
                             test = XeBUS.Instance.ThemXe(txtBoxBienSo.Text, comBoxHieuXe.SelectedValue.ToString(), KhachHangBUS.Instance.LayMaKH(txtBoxTenKH.Text, txtBoxDienThoai.Text), now);
                             if (test == 0)
                             {
-                                MessageBox.Show("Thêm xe  k thành công!");
-                            }
-                            else {
-                                MessageBox.Show("Thêm xe thành công!");
-                                progressBarSoXeDaThem.Value = progressBarSoXeDaThem.Value + 1;
-                                this.xETableAdapter.Fill(this.quanLyGarageDataSet.XE);
-                            }
-                            if (progressBarSoXeDaThem.Value == progressBarSoXeDaThem.Maximum)
-                            {
-                                txtBoxTenKH.Clear();
-                                txtBoxDienThoai.Clear();
-                                txtBoxDiaChi.Clear();
-                                txtBoxBienSo.Clear();
-                                txtBoxTenKH.Visible = false;
-                                txtBoxDienThoai.Visible = false;
-                                txtBoxDiaChi.Visible = false;
-                                txtBoxBienSo.Visible = false;
-                                buttonThemXe.Enabled = false;
-                                buttonClear.Enabled = false;
+                                MessageBox.Show("Thêm xe k thành công!");
                             }
                             else
                             {
+                                MessageBox.Show("Thêm xe thành công!");
+                                progressBarSoXeDaThem.Value = progressBarSoXeDaThem.Value + 1;
+                                this.xETableAdapter.Fill(this.quanLyGarageDataSet.XE);
+
                                 txtBoxTenKH.Clear();
                                 txtBoxDienThoai.Clear();
                                 txtBoxDiaChi.Clear();
@@ -489,21 +484,6 @@ namespace GUI
             }
         }
 
-        private void btnCapNhatSoHieuXe_Click(object sender, EventArgs e)
-        {
-            if (txtBoxSoHieuXe.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập số hiệu xe !");
-            }else
-            {
-                int test = BUS.QuyDinhBUS.Instance.CapNhatSoHieuXe(txtBoxSoHieuXe.Text);
-                if (test != 0)
-                {
-                    MessageBox.Show("Thay đổi số hiệu xe thành công !");
-                    txtBoxSoHieuXe.Clear();
-                }
-            }                
-        }
 
         private void btnCapNhatSoXeSuaToiDa_Click(object sender, EventArgs e)
         {
@@ -522,40 +502,6 @@ namespace GUI
             }
         }
 
-        private void btnCapNhatSoLoaiVatTu_Click(object sender, EventArgs e)
-        {
-            if (txtBoxSoLoaiVatTu.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập số loại vật tư !");
-            }
-            else
-            {
-                int test = BUS.QuyDinhBUS.Instance.CapNhatSoLoaiVatTu(txtBoxSoLoaiVatTu.Text);
-                if (test != 0)
-                {
-                    MessageBox.Show("Thay đổi số loại vật tư thành công !");
-                    txtBoxSoLoaiVatTu.Clear();
-                }
-            }           
-        }
-
-        private void btnCapNhatSoLoaiTienCong_Click(object sender, EventArgs e)
-        {
-            if (txtBoxSoLoaiTienCong.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập số loại vật tư !");
-            }
-            else
-            {
-
-                int test = BUS.QuyDinhBUS.Instance.CapNhatSoLoaiTienCong(txtBoxSoLoaiTienCong.Text);
-                if (test != 0)
-                {
-                    MessageBox.Show("Thay đổi số loại tiền công thành công !");
-                    txtBoxSoLoaiTienCong.Clear();
-                }
-            }
-        }
 
         private void TextBoxSoLuongVTPTPhieuSuaChua_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -892,6 +838,16 @@ namespace GUI
             {
                 e.Handled = true;
             }
+        }
+
+        private void labelTieuDe_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tPTiepNhan_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

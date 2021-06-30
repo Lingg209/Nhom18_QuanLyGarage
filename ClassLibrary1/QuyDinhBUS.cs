@@ -29,16 +29,6 @@ namespace BUS
         {
             return DAO.QuyDinhDAO.Instance.LayTatCaQuyDinh();
         }
-        public int LaySoHieuXe()
-        {
-            DataTable dt = QuyDinhDAO.Instance.LaySoHieuXe();
-            return int.Parse(dt.Rows[0][0].ToString());
-        }
-        public int CapNhatSoHieuXe(string GiaTriMoi)
-        {
-            int gtm = int.Parse(GiaTriMoi);
-            return DAO.QuyDinhDAO.Instance.CapNhatSoHieuXe(gtm);
-        }
         public int LaySoXeSuaToiDa()
         {
             DataTable dt = QuyDinhDAO.Instance.LaySoXeSuaToiDa();
@@ -49,25 +39,6 @@ namespace BUS
             int gtm = int.Parse(GiaTriMoi);
             return DAO.QuyDinhDAO.Instance.CapNhatSoXeSuaToiDa(gtm);
         }
-        public int LaySoLoaiVatTu()
-        {
-            DataTable dt = QuyDinhDAO.Instance.LaySoLoaiVatTu();
-            return int.Parse(dt.Rows[0][0].ToString());
-        }
-        public int CapNhatSoLoaiVatTu(string GiaTriMoi)
-        {
-            int gtm = int.Parse(GiaTriMoi);
-            return DAO.QuyDinhDAO.Instance.CapNhatSoLoaiVatTu(gtm);
-        }
-        public int LaySoSoLoaiTienCong()
-        {
-            DataTable dt = QuyDinhDAO.Instance.LaySoLoaiTienCong();
-            return int.Parse(dt.Rows[0][0].ToString());
-        }
-        public int CapNhatSoLoaiTienCong(string GiaTriMoi)
-        {
-            int gtm = int.Parse(GiaTriMoi);
-            return DAO.QuyDinhDAO.Instance.CapNhatSoLoaiTienCong(gtm);
-        }
+        
     }
 }
