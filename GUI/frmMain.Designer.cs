@@ -197,12 +197,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.MaPhuTung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenVatTuPhuTung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maPhuTungDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenVatTuPhuTungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soLuongDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donGiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tPTraCuu = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
@@ -278,6 +272,8 @@
             this.pHIEUNHAPVTPTTableAdapter = new GUI.QuanLyGarageDataSetTableAdapters.PHIEUNHAPVTPTTableAdapter();
             this.pHIEUSUACHUATableAdapter = new GUI.QuanLyGarageDataSetTableAdapters.PHIEUSUACHUATableAdapter();
             this.pHIEUTHUTIENTableAdapter = new GUI.QuanLyGarageDataSetTableAdapters.PHIEUTHUTIENTableAdapter();
+            this.MaPhuTung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenVatTuPhuTung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStripCongCu.SuspendLayout();
             this.tPQuyDinh.SuspendLayout();
             this.panelQuyDinhHienHanh.SuspendLayout();
@@ -2202,10 +2198,10 @@
             // panel15
             // 
             this.panel15.Controls.Add(this.label1);
-            this.panel15.Location = new System.Drawing.Point(794, 2);
+            this.panel15.Location = new System.Drawing.Point(822, 2);
             this.panel15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(348, 39);
+            this.panel15.Size = new System.Drawing.Size(320, 39);
             this.panel15.TabIndex = 5;
             this.panel15.TabStop = true;
             // 
@@ -2213,7 +2209,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(39, 12);
+            this.label1.Location = new System.Drawing.Point(34, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(265, 27);
             this.label1.TabIndex = 0;
@@ -2223,9 +2219,9 @@
             // panel10
             // 
             this.panel10.Controls.Add(this.dataGridView1);
-            this.panel10.Location = new System.Drawing.Point(794, 49);
+            this.panel10.Location = new System.Drawing.Point(822, 49);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(351, 394);
+            this.panel10.Size = new System.Drawing.Size(323, 394);
             this.panel10.TabIndex = 4;
             // 
             // dataGridView1
@@ -2234,73 +2230,15 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaPhuTung,
-            this.TenVatTuPhuTung,
-            this.maPhuTungDataGridViewTextBoxColumn1,
-            this.tenVatTuPhuTungDataGridViewTextBoxColumn,
-            this.soLuongDataGridViewTextBoxColumn1,
-            this.donGiaDataGridViewTextBoxColumn});
+            this.TenVatTuPhuTung});
             this.dataGridView1.DataSource = this.kHOBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 8);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(345, 382);
+            this.dataGridView1.Size = new System.Drawing.Size(317, 382);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // MaPhuTung
-            // 
-            this.MaPhuTung.DataPropertyName = "MaPhuTung";
-            this.MaPhuTung.HeaderText = "Mã VTPT";
-            this.MaPhuTung.MinimumWidth = 6;
-            this.MaPhuTung.Name = "MaPhuTung";
-            this.MaPhuTung.ReadOnly = true;
-            this.MaPhuTung.Width = 125;
-            // 
-            // TenVatTuPhuTung
-            // 
-            this.TenVatTuPhuTung.DataPropertyName = "TenVatTuPhuTung";
-            this.TenVatTuPhuTung.HeaderText = "Tên VTPT";
-            this.TenVatTuPhuTung.MinimumWidth = 6;
-            this.TenVatTuPhuTung.Name = "TenVatTuPhuTung";
-            this.TenVatTuPhuTung.ReadOnly = true;
-            this.TenVatTuPhuTung.Width = 125;
-            // 
-            // maPhuTungDataGridViewTextBoxColumn1
-            // 
-            this.maPhuTungDataGridViewTextBoxColumn1.DataPropertyName = "MaPhuTung";
-            this.maPhuTungDataGridViewTextBoxColumn1.HeaderText = "MaPhuTung";
-            this.maPhuTungDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.maPhuTungDataGridViewTextBoxColumn1.Name = "maPhuTungDataGridViewTextBoxColumn1";
-            this.maPhuTungDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.maPhuTungDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // tenVatTuPhuTungDataGridViewTextBoxColumn
-            // 
-            this.tenVatTuPhuTungDataGridViewTextBoxColumn.DataPropertyName = "TenVatTuPhuTung";
-            this.tenVatTuPhuTungDataGridViewTextBoxColumn.HeaderText = "TenVatTuPhuTung";
-            this.tenVatTuPhuTungDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenVatTuPhuTungDataGridViewTextBoxColumn.Name = "tenVatTuPhuTungDataGridViewTextBoxColumn";
-            this.tenVatTuPhuTungDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tenVatTuPhuTungDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // soLuongDataGridViewTextBoxColumn1
-            // 
-            this.soLuongDataGridViewTextBoxColumn1.DataPropertyName = "SoLuong";
-            this.soLuongDataGridViewTextBoxColumn1.HeaderText = "SoLuong";
-            this.soLuongDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.soLuongDataGridViewTextBoxColumn1.Name = "soLuongDataGridViewTextBoxColumn1";
-            this.soLuongDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.soLuongDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // donGiaDataGridViewTextBoxColumn
-            // 
-            this.donGiaDataGridViewTextBoxColumn.DataPropertyName = "DonGia";
-            this.donGiaDataGridViewTextBoxColumn.HeaderText = "DonGia";
-            this.donGiaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.donGiaDataGridViewTextBoxColumn.Name = "donGiaDataGridViewTextBoxColumn";
-            this.donGiaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.donGiaDataGridViewTextBoxColumn.Width = 125;
             // 
             // tPTraCuu
             // 
@@ -3027,6 +2965,24 @@
             // 
             this.pHIEUTHUTIENTableAdapter.ClearBeforeFill = true;
             // 
+            // MaPhuTung
+            // 
+            this.MaPhuTung.DataPropertyName = "MaPhuTung";
+            this.MaPhuTung.HeaderText = "Mã VTPT";
+            this.MaPhuTung.MinimumWidth = 6;
+            this.MaPhuTung.Name = "MaPhuTung";
+            this.MaPhuTung.ReadOnly = true;
+            this.MaPhuTung.Width = 125;
+            // 
+            // TenVatTuPhuTung
+            // 
+            this.TenVatTuPhuTung.DataPropertyName = "TenVatTuPhuTung";
+            this.TenVatTuPhuTung.HeaderText = "Tên VTPT";
+            this.TenVatTuPhuTung.MinimumWidth = 6;
+            this.TenVatTuPhuTung.Name = "TenVatTuPhuTung";
+            this.TenVatTuPhuTung.ReadOnly = true;
+            this.TenVatTuPhuTung.Width = 125;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -3417,12 +3373,6 @@
         private System.Windows.Forms.Button btnPSC;
         private System.Windows.Forms.Button btnPTT;
         private System.Windows.Forms.TextBox txtBoxDienThoai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhuTung;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenVatTuPhuTung;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maPhuTungDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenVatTuPhuTungDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soLuongDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn donGiaDataGridViewTextBoxColumn;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabnhapcu;
         private System.Windows.Forms.TabPage tabnhapmoi;
@@ -3442,5 +3392,7 @@
         private System.Windows.Forms.Button buttonTaoMoiVTPT;
         private System.Windows.Forms.Button button_phieunhapmoivtpt;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhuTung;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenVatTuPhuTung;
     }
 }
